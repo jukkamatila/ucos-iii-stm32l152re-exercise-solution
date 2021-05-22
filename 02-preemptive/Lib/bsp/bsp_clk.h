@@ -13,12 +13,16 @@ extern "C" {
 
 /**
  * @brief This funtion is a blocking delay, OSSched won't be called.
+ * 
+ * @param[in] period_ms: in millisecond
  */
 void Delay_Blocking(uint16_t period_ms);
 
 /**
  * @brief This function is a non-blocking delay which means other tasks can
  * run during the delay. OSSched() is called to schedule which task run next.
+ * 
+ * @param[in] period_ms: in millisecond
  */
 void Delay_NonBlocking(uint16_t period_ms);
 
