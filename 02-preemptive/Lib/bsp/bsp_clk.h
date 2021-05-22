@@ -1,0 +1,41 @@
+/**
+ * @file bsp_clk.h
+ */
+
+#ifndef __BSP_CLK_H
+#define __BSP_CLK_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "main.h"
+
+/**
+ * @brief This funtion is a blocking delay, OSSched won't be called.
+ */
+void Delay_Blocking(uint16_t period_ms);
+
+/**
+ * @brief This function is a non-blocking delay which means other tasks can
+ * run during the delay. OSSched() is called to schedule which task run next.
+ */
+void Delay_NonBlocking(uint16_t period_ms);
+
+/**
+ * @brief This function is called when errors occur
+ */
+void Error_Handler(void);
+
+/**
+ * @brief This function is used to configurate system clock
+ */
+void SystemClock_Config(void);
+
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __BSP_CLK_H */
