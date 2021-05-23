@@ -12,14 +12,31 @@ extern "C" {
 #include "main.h"
 
 /**
- * @brief This function is used to configurate system clock
+ * @brief This funtion is a blocking delay, OSSched won't be called.
+ * 
+ * @param[in] period_ms: in millisecond
  */
-void SystemClock_Config(void);
+void Delay_Blocking(uint16_t period_ms);
+
+/**
+ * @brief This function is a non-blocking delay which means other tasks can
+ * run during the delay. OSSched() is called to schedule which task run next.
+ * 
+ * @param[in] period_ms: in millisecond
+ */
+void Delay_NonBlocking(uint16_t period_ms);
 
 /**
  * @brief This function is called when errors occur
  */
 void Error_Handler(void);
+
+/**
+ * @brief This function is used to configurate system clock
+ */
+void SystemClock_Config(void);
+
+
 
 #ifdef __cplusplus
 }
