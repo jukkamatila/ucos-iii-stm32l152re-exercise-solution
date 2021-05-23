@@ -46,6 +46,7 @@ static void Task3(void *p_arg);
  * Shared resources
  ******************************************************************************/ 
 OS_SEM task_sync_sem;
+uint8_t is_bmp280_read = 0;
 
 /*******************************************************************************
  * Main function
@@ -164,8 +165,11 @@ static void Task1(void *p_arg)
 
         uint8_t msg[] = "\rTask 1 run\n\r";
         HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
-        BMP280_Read();
-
+        if(is_bmp280_read == 0)
+        {
+            BMP280_Read();
+            is_bmp280_read = 1;
+        }
         HAL_UART_Transmit(&huart2, (uint8_t *)"\rTask 1 - OSSemPost\n\r", 22, 100);
         OSSemPost(
             (OS_SEM *)&task_sync_sem,
@@ -206,13 +210,17 @@ static void Task3(void *p_arg)
         uint8_t msg[] = "\rTask 3 run\n\r";
         HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
 
-        for(int i = 0; i < 3; i++)
+        if(is_bmp280_read == 1)
         {
-            HAL_UART_Transmit(&huart2, (uint8_t*)"\rBlink\n\r", 9, 100);
-            LED_On(GPIOA, GPIO_PIN_5);
-            Delay_Blocking(500);
-            LED_Off(GPIOA, GPIO_PIN_5);
-            Delay_Blocking(500);
+            for(int i = 0; i < 3; i++)
+            {
+                HAL_UART_Transmit(&huart2, (uint8_t*)"\rBlink\n\r", 9, 100);
+                LED_On(GPIOA, GPIO_PIN_5);
+                Delay_Blocking(500);
+                LED_Off(GPIOA, GPIO_PIN_5);
+                Delay_Blocking(500);
+            }
+            is_bmp280_read = 0;
         }
 
         HAL_UART_Transmit(&huart2, (uint8_t *)"\rTask 3 - OSSemPost\n\r", 22, 100);
