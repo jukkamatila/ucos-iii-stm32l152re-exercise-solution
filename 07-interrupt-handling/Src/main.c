@@ -239,13 +239,5 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if(GPIO_Pin == GPIO_PIN_13)
     {
         HAL_UART_Transmit(&huart2, (uint8_t *)"\rButton pressed\n\r", 20, 100);
-        for(int i = 0; i < 3; i++)
-        {
-            HAL_UART_Transmit(&huart2, (uint8_t*)"\rBlink button\n\r", 16, 100);
-            LED_On(GPIOA, GPIO_PIN_5);
-            Delay_Blocking(500);
-            LED_Off(GPIOA, GPIO_PIN_5);
-            Delay_Blocking(500);
-        }
     }
 }
