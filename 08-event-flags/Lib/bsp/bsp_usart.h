@@ -1,3 +1,7 @@
+/**
+ * @file bsp_usart.h
+ */
+
 #ifndef __BSP_USART_H
 #define __BSP_USART_H
 
@@ -9,6 +13,9 @@ extern "C" {
 
 extern UART_HandleTypeDef huart2;
 
+/**
+ * @brief This function initializes USART2
+ */
 void MX_USART2_UART_Init(void);
 
 #define USART_TX_Pin GPIO_PIN_2

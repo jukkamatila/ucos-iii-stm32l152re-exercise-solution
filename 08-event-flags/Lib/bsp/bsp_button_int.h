@@ -12,7 +12,7 @@ extern "C" {
 #include "main.h"
 
 /**
- * @brief This function initialize button and EXTI interrupt
+ * @brief This function initialize button and EXTI (external interrupt)
  */
 void Button_Init(void);
 
