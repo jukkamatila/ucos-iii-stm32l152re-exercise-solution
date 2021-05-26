@@ -1,0 +1,438 @@
+\hypertarget{bsp__bmp280_8c}{}\doxysection{bsp\+\_\+bmp280.\+c File Reference}
+\label{bsp__bmp280_8c}\index{bsp\_bmp280.c@{bsp\_bmp280.c}}
+{\ttfamily \#include $<$bsp\+\_\+bmp280.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a31f92833cdfbcf5d82ad8382c2b29749}{bmp280\+\_\+get\+\_\+regs}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the data from the given register address of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a2d41bc3f1cfccf3e250749a77723883b}{bmp280\+\_\+set\+\_\+regs}} (uint8\+\_\+t $\ast$reg\+\_\+addr, const uint8\+\_\+t $\ast$reg\+\_\+data, uint8\+\_\+t len, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the given data to the register addresses of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_ab3d06fdfe71e48cb081e1f66c14ba63f}{bmp280\+\_\+soft\+\_\+reset}} (const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API triggers the soft reset of the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a4a9809dbaa4df084461c705045925f8e}{bmp280\+\_\+init}} (struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is the entry point. It reads the chip-\/id and calibration data from the sensor. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_aded88d5f67beb1b3311bb0e26ecc19da}{bmp280\+\_\+get\+\_\+config}} (struct \mbox{\hyperlink{structbmp280__config}{bmp280\+\_\+config}} $\ast$\mbox{\hyperlink{bsp__bmp280__cfg_8h_af397dccfb46f629f15f4d28d643f84de}{conf}}, struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the data from the ctrl\+\_\+meas register and config register. It gives the currently set temperature and pressure over-\/sampling configuration, power mode configuration, sleep duration and IIR filter coefficient. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a61799b86b24d68b7a20814fcaf9adea8}{bmp280\+\_\+set\+\_\+config}} (const struct \mbox{\hyperlink{structbmp280__config}{bmp280\+\_\+config}} $\ast$\mbox{\hyperlink{bsp__bmp280__cfg_8h_af397dccfb46f629f15f4d28d643f84de}{conf}}, struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the data to the ctrl\+\_\+meas register and config register. It sets the temperature and pressure over-\/sampling configuration, power mode configuration, sleep duration and IIR filter coefficient. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a7f39644204f57cb6fc3eff936df2715f}{bmp280\+\_\+get\+\_\+status}} (struct \mbox{\hyperlink{structbmp280__status}{bmp280\+\_\+status}} $\ast$status, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the status register. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_ab1abf2ca4516a0e666469f7d57300c00}{bmp280\+\_\+get\+\_\+power\+\_\+mode}} (uint8\+\_\+t $\ast$mode, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the power mode. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a4401d930aa889a00121087f4aeac0182}{bmp280\+\_\+set\+\_\+power\+\_\+mode}} (uint8\+\_\+t mode, struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API writes the power mode. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_ae99e0ecdad4920b363d1c258887b4ff3}{bmp280\+\_\+get\+\_\+uncomp\+\_\+data}} (struct \mbox{\hyperlink{structbmp280__uncomp__data}{bmp280\+\_\+uncomp\+\_\+data}} $\ast$uncomp\+\_\+data, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API reads the temperature and pressure data registers. It gives the raw temperature and pressure data . \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_ad1d9f81bb0a43c72195319d72d915367}{bmp280\+\_\+get\+\_\+comp\+\_\+temp\+\_\+32bit}} (int32\+\_\+t $\ast$comp\+\_\+temp, int32\+\_\+t uncomp\+\_\+temp, struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the compensated temperature from uncompensated temperature. This API uses 32 bit integers. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_aed425399b074d6541e8d74883dba2446}{bmp280\+\_\+get\+\_\+comp\+\_\+pres\+\_\+32bit}} (uint32\+\_\+t $\ast$comp\+\_\+pres, uint32\+\_\+t uncomp\+\_\+pres, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the compensated pressure from uncompensated pressure. This API uses 32 bit integers. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a0b090c0b8883517d20694e343c1f7df7}{bmp280\+\_\+get\+\_\+comp\+\_\+pres\+\_\+64bit}} (uint32\+\_\+t $\ast$pressure, uint32\+\_\+t uncomp\+\_\+pres, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the compensated pressure from uncompensated pressure. This API uses 64 bit integers. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a2699b3c803edf4918b684b694ce268fb}{bmp280\+\_\+get\+\_\+comp\+\_\+temp\+\_\+double}} (double $\ast$temperature, int32\+\_\+t uncomp\+\_\+temp, struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the compensated temperature from uncompensated temperature. This API uses double floating precision. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a1890d1009e829f08bfbfde4c9f3a09c9}{bmp280\+\_\+get\+\_\+comp\+\_\+pres\+\_\+double}} (double $\ast$pressure, uint32\+\_\+t uncomp\+\_\+pres, const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API is used to get the compensated pressure from uncompensated pressure. This API uses double floating precision. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{bsp__bmp280_8c_a7dbe28b4cc8930af9ff23d1fe566f0c6}{bmp280\+\_\+compute\+\_\+meas\+\_\+time}} (const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$dev)
+\begin{DoxyCompactList}\small\item\em This API computes the measurement time in milliseconds for the active configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copyright (c) 2020 Bosch Sensortec GmbH. All rights reserved.
+
+BSD-\/3-\/\+Clause
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}\+AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+\begin{DoxyDate}{Date}
+2020-\/01-\/10 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+v3.\+3.\+4 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__bmp280_8c_a7dbe28b4cc8930af9ff23d1fe566f0c6}\label{bsp__bmp280_8c_a7dbe28b4cc8930af9ff23d1fe566f0c6}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_compute\_meas\_time@{bmp280\_compute\_meas\_time}}
+\index{bmp280\_compute\_meas\_time@{bmp280\_compute\_meas\_time}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_compute\_meas\_time()}{bmp280\_compute\_meas\_time()}}
+{\footnotesize\ttfamily uint8\+\_\+t bmp280\+\_\+compute\+\_\+meas\+\_\+time (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API computes the measurement time in milliseconds for the active configuration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Measurement time for the active configuration in milliseconds 
+\end{DoxyReturn}
+
+
+Definition at line 667 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_aed425399b074d6541e8d74883dba2446}\label{bsp__bmp280_8c_aed425399b074d6541e8d74883dba2446}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_comp\_pres\_32bit@{bmp280\_get\_comp\_pres\_32bit}}
+\index{bmp280\_get\_comp\_pres\_32bit@{bmp280\_get\_comp\_pres\_32bit}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_comp\_pres\_32bit()}{bmp280\_get\_comp\_pres\_32bit()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+comp\+\_\+pres\+\_\+32bit (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{comp\+\_\+pres,  }\item[{uint32\+\_\+t}]{uncomp\+\_\+pres,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to get the compensated pressure from uncompensated pressure. This API uses 32 bit integers. 
+
+This API is used to get the compensated pressure from uncompensated pressure. This API uses 32 bit integers. Pressure in Pa as unsigned 32 bit integer output value of \char`\"{}96386\char`\"{} equals 96386 Pa = 963.\+86 h\+Pa. 
+
+Definition at line 476 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a0b090c0b8883517d20694e343c1f7df7}\label{bsp__bmp280_8c_a0b090c0b8883517d20694e343c1f7df7}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_comp\_pres\_64bit@{bmp280\_get\_comp\_pres\_64bit}}
+\index{bmp280\_get\_comp\_pres\_64bit@{bmp280\_get\_comp\_pres\_64bit}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_comp\_pres\_64bit()}{bmp280\_get\_comp\_pres\_64bit()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+comp\+\_\+pres\+\_\+64bit (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{pressure,  }\item[{uint32\+\_\+t}]{uncomp\+\_\+pres,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to get the compensated pressure from uncompensated pressure. This API uses 64 bit integers. 
+
+This API is used to get the compensated pressure from uncompensated pressure. This API uses 64 bit integers. Pressure in Pa as unsigned 32 bit integer in Q24.\+8 format (24 integer bits and 8 fractional bits). Output value of \char`\"{}24674867\char`\"{} represents 24674867/256 = 96386.\+2 Pa = 963.\+862 h\+Pa. 
+
+Definition at line 540 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a1890d1009e829f08bfbfde4c9f3a09c9}\label{bsp__bmp280_8c_a1890d1009e829f08bfbfde4c9f3a09c9}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_comp\_pres\_double@{bmp280\_get\_comp\_pres\_double}}
+\index{bmp280\_get\_comp\_pres\_double@{bmp280\_get\_comp\_pres\_double}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_comp\_pres\_double()}{bmp280\_get\_comp\_pres\_double()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+comp\+\_\+pres\+\_\+double (\begin{DoxyParamCaption}\item[{double $\ast$}]{pressure,  }\item[{uint32\+\_\+t}]{uncomp\+\_\+pres,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to get the compensated pressure from uncompensated pressure. This API uses double floating precision. 
+
+This API is used to get the compensated pressure from uncompensated pressure. This API uses double floating precision. Pressure in Pa as double. Output value of \char`\"{}96386.\+2\char`\"{} equals 96386.\+2 Pa = 963.\+862 h\+Pa. 
+
+Definition at line 622 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_ad1d9f81bb0a43c72195319d72d915367}\label{bsp__bmp280_8c_ad1d9f81bb0a43c72195319d72d915367}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_comp\_temp\_32bit@{bmp280\_get\_comp\_temp\_32bit}}
+\index{bmp280\_get\_comp\_temp\_32bit@{bmp280\_get\_comp\_temp\_32bit}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_comp\_temp\_32bit()}{bmp280\_get\_comp\_temp\_32bit()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+comp\+\_\+temp\+\_\+32bit (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{comp\+\_\+temp,  }\item[{int32\+\_\+t}]{uncomp\+\_\+temp,  }\item[{struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to get the compensated temperature from uncompensated temperature. This API uses 32 bit integers. 
+
+This API is used to get the compensated temperature from uncompensated temperature. This API uses 32 bit integers. Temperature in degC, resolution is 0.\+01 DegC. output value of \char`\"{}5123\char`\"{} equals 51.\+23 degree Celsius. 
+
+Definition at line 441 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a2699b3c803edf4918b684b694ce268fb}\label{bsp__bmp280_8c_a2699b3c803edf4918b684b694ce268fb}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_comp\_temp\_double@{bmp280\_get\_comp\_temp\_double}}
+\index{bmp280\_get\_comp\_temp\_double@{bmp280\_get\_comp\_temp\_double}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_comp\_temp\_double()}{bmp280\_get\_comp\_temp\_double()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+comp\+\_\+temp\+\_\+double (\begin{DoxyParamCaption}\item[{double $\ast$}]{temperature,  }\item[{int32\+\_\+t}]{uncomp\+\_\+temp,  }\item[{struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is used to get the compensated temperature from uncompensated temperature. This API uses double floating precision. 
+
+This API is used to get the compensated temperature from uncompensated temperature. This API uses double floating precision. Temperature in degree Celsius , double precision. output value of \char`\"{}51.\+23\char`\"{} equals 51.\+23 degC. 
+
+Definition at line 589 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_aded88d5f67beb1b3311bb0e26ecc19da}\label{bsp__bmp280_8c_aded88d5f67beb1b3311bb0e26ecc19da}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_config@{bmp280\_get\_config}}
+\index{bmp280\_get\_config@{bmp280\_get\_config}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_config()}{bmp280\_get\_config()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmp280__config}{bmp280\+\_\+config}} $\ast$}]{conf,  }\item[{struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the data from the ctrl\+\_\+meas register and config register. It gives the currently set temperature and pressure over-\/sampling configuration, power mode configuration, sleep duration and IIR filter coefficient. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em conf} & \+: Current configuration of the bmp280 conf.\+osrs\+\_\+t, conf.\+osrs\+\_\+p = BMP280\+\_\+\+OS\+\_\+\+NONE, BMP280\+\_\+\+OS\+\_\+1X, BMP280\+\_\+\+OS\+\_\+2X, BMP280\+\_\+\+OS\+\_\+4X, BMP280\+\_\+\+OS\+\_\+8X, BMP280\+\_\+\+OS\+\_\+16X conf.\+odr = BMP280\+\_\+\+ODR\+\_\+0\+\_\+5\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+62\+\_\+5\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+125\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+250\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+500\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+1000\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+2000\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+4000\+\_\+\+MS conf.\+filter = BMP280\+\_\+\+FILTER\+\_\+\+OFF, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+2, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+4, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+8, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+16 conf.\+spi3w\+\_\+en = BMP280\+\_\+\+SPI3\+\_\+\+WIRE\+\_\+\+ENABLE, BMP280\+\_\+\+SPI3\+\_\+\+WIRE\+\_\+\+DISABLE \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 298 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_ab1abf2ca4516a0e666469f7d57300c00}\label{bsp__bmp280_8c_ab1abf2ca4516a0e666469f7d57300c00}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_power\_mode@{bmp280\_get\_power\_mode}}
+\index{bmp280\_get\_power\_mode@{bmp280\_get\_power\_mode}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_power\_mode()}{bmp280\_get\_power\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+power\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{mode,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the power mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em mode} & \+: BMP280\+\_\+\+SLEEP\+\_\+\+MODE, BMP280\+\_\+\+NORMAL\+\_\+\+MODE, BMP280\+\_\+\+FORCED\+\_\+\+MODE \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 364 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a31f92833cdfbcf5d82ad8382c2b29749}\label{bsp__bmp280_8c_a31f92833cdfbcf5d82ad8382c2b29749}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_regs@{bmp280\_get\_regs}}
+\index{bmp280\_get\_regs@{bmp280\_get\_regs}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_regs()}{bmp280\_get\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{reg\+\_\+data,  }\item[{uint8\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the data from the given register address of the sensor. 
+
+CPP guard
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be read \\
+\hline
+\mbox{\texttt{ out}}  & {\em reg\+\_\+data} & \+: Pointer to data buffer to store the read data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes of data to be read. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 119 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a7f39644204f57cb6fc3eff936df2715f}\label{bsp__bmp280_8c_a7f39644204f57cb6fc3eff936df2715f}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_status@{bmp280\_get\_status}}
+\index{bmp280\_get\_status@{bmp280\_get\_status}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_status()}{bmp280\_get\_status()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmp280__status}{bmp280\+\_\+status}} $\ast$}]{status,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the status register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em status} & \+: Status of the sensor status.\+measuring = BMP280\+\_\+\+MEAS\+\_\+\+DONE, BMP280\+\_\+\+MEAS\+\_\+\+ONGOING status.\+im\+\_\+update = BMP280\+\_\+\+IM\+\_\+\+UPDATE\+\_\+\+DONE, BMP280\+\_\+\+IM\+\_\+\+UPDATE\+\_\+\+ONGOING \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 339 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_ae99e0ecdad4920b363d1c258887b4ff3}\label{bsp__bmp280_8c_ae99e0ecdad4920b363d1c258887b4ff3}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_get\_uncomp\_data@{bmp280\_get\_uncomp\_data}}
+\index{bmp280\_get\_uncomp\_data@{bmp280\_get\_uncomp\_data}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_get\_uncomp\_data()}{bmp280\_get\_uncomp\_data()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+get\+\_\+uncomp\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmp280__uncomp__data}{bmp280\+\_\+uncomp\+\_\+data}} $\ast$}]{uncomp\+\_\+data,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API reads the temperature and pressure data registers. It gives the raw temperature and pressure data . 
+
+This API reads the temperature and pressure data registers. It gives the raw temperature and pressure data. 
+
+Definition at line 403 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a4a9809dbaa4df084461c705045925f8e}\label{bsp__bmp280_8c_a4a9809dbaa4df084461c705045925f8e}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_init@{bmp280\_init}}
+\index{bmp280\_init@{bmp280\_init}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_init()}{bmp280\_init()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API is the entry point. It reads the chip-\/id and calibration data from the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em zero} & -\/$>$ Success / +ve value -\/$>$ Warning / -\/ve value -\/$>$ Error \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 241 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a61799b86b24d68b7a20814fcaf9adea8}\label{bsp__bmp280_8c_a61799b86b24d68b7a20814fcaf9adea8}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_set\_config@{bmp280\_set\_config}}
+\index{bmp280\_set\_config@{bmp280\_set\_config}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_set\_config()}{bmp280\_set\_config()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+set\+\_\+config (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmp280__config}{bmp280\+\_\+config}} $\ast$}]{conf,  }\item[{struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the data to the ctrl\+\_\+meas register and config register. It sets the temperature and pressure over-\/sampling configuration, power mode configuration, sleep duration and IIR filter coefficient. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em conf} & \+: Desired configuration to the bmp280 conf.\+osrs\+\_\+t, conf.\+osrs\+\_\+p = BMP280\+\_\+\+OS\+\_\+\+NONE, BMP280\+\_\+\+OS\+\_\+1X, BMP280\+\_\+\+OS\+\_\+2X, BMP280\+\_\+\+OS\+\_\+4X, BMP280\+\_\+\+OS\+\_\+8X, BMP280\+\_\+\+OS\+\_\+16X conf.\+odr = BMP280\+\_\+\+ODR\+\_\+0\+\_\+5\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+62\+\_\+5\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+125\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+250\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+500\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+1000\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+2000\+\_\+\+MS, BMP280\+\_\+\+ODR\+\_\+4000\+\_\+\+MS conf.\+filter = BMP280\+\_\+\+FILTER\+\_\+\+OFF, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+2, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+4, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+8, BMP280\+\_\+\+FILTER\+\_\+\+COEFF\+\_\+16 conf.\+spi3w\+\_\+en = BMP280\+\_\+\+SPI3\+\_\+\+WIRE\+\_\+\+ENABLE, BMP280\+\_\+\+SPI3\+\_\+\+WIRE\+\_\+\+DISABLE \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 330 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a4401d930aa889a00121087f4aeac0182}\label{bsp__bmp280_8c_a4401d930aa889a00121087f4aeac0182}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_set\_power\_mode@{bmp280\_set\_power\_mode}}
+\index{bmp280\_set\_power\_mode@{bmp280\_set\_power\_mode}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_set\_power\_mode()}{bmp280\_set\_power\_mode()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+set\+\_\+power\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mode,  }\item[{struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the power mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em mode} & \+: BMP280\+\_\+\+SLEEP\+\_\+\+MODE, BMP280\+\_\+\+NORMAL\+\_\+\+MODE, BMP280\+\_\+\+FORCED\+\_\+\+MODE \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 386 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_a2d41bc3f1cfccf3e250749a77723883b}\label{bsp__bmp280_8c_a2d41bc3f1cfccf3e250749a77723883b}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_set\_regs@{bmp280\_set\_regs}}
+\index{bmp280\_set\_regs@{bmp280\_set\_regs}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_set\_regs()}{bmp280\_set\_regs()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+set\+\_\+regs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{reg\+\_\+addr,  }\item[{const uint8\+\_\+t $\ast$}]{reg\+\_\+data,  }\item[{uint8\+\_\+t}]{len,  }\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API writes the given data to the register addresses of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+\_\+addr} & \+: Register address from where the data to be written. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg\+\_\+data} & \+: Pointer to data buffer which is to be written in the sensor. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & \+: No of bytes of data to write.. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 152 of file bsp\+\_\+bmp280.\+c.
+
+\mbox{\Hypertarget{bsp__bmp280_8c_ab3d06fdfe71e48cb081e1f66c14ba63f}\label{bsp__bmp280_8c_ab3d06fdfe71e48cb081e1f66c14ba63f}} 
+\index{bsp\_bmp280.c@{bsp\_bmp280.c}!bmp280\_soft\_reset@{bmp280\_soft\_reset}}
+\index{bmp280\_soft\_reset@{bmp280\_soft\_reset}!bsp\_bmp280.c@{bsp\_bmp280.c}}
+\doxysubsubsection{\texorpdfstring{bmp280\_soft\_reset()}{bmp280\_soft\_reset()}}
+{\footnotesize\ttfamily int8\+\_\+t bmp280\+\_\+soft\+\_\+reset (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+This API triggers the soft reset of the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & \+: Structure instance of \mbox{\hyperlink{structbmp280__dev}{bmp280\+\_\+dev}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of API execution 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em Zero} & for Success, non-\/zero otherwise.. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 219 of file bsp\+\_\+bmp280.\+c.
+

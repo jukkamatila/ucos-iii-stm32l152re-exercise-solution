@@ -1,0 +1,57 @@
+\hypertarget{bsp__clk_8c}{}\doxysection{bsp\+\_\+clk.\+c File Reference}
+\label{bsp__clk_8c}\index{bsp\_clk.c@{bsp\_clk.c}}
+{\ttfamily \#include \char`\"{}bsp\+\_\+clk.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__clk_8c_ab49a7b00510a2168c4aec729c6a9e9ad}{Delay\+\_\+\+Blocking}} (uint32\+\_\+t period\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em This funtion is a blocking delay, OSSched won\textquotesingle{}t be called. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__clk_8c_a94c788b22aefc860ec5a667c84236b6c}{Delay\+\_\+\+Non\+Blocking}} (uint32\+\_\+t period\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em This function is a non-\/blocking delay which means other tasks can run during the delay. OSSched() is called to schedule which task run next. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__clk_8c_a1730ffe1e560465665eb47d9264826f9}\label{bsp__clk_8c_a1730ffe1e560465665eb47d9264826f9}} 
+void \mbox{\hyperlink{bsp__clk_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is called when errors occur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__clk_8c_a70af21c671abfcc773614a9a4f63d920}\label{bsp__clk_8c_a70af21c671abfcc773614a9a4f63d920}} 
+void \mbox{\hyperlink{bsp__clk_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em This function is used to configurate system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__clk_8c_ab49a7b00510a2168c4aec729c6a9e9ad}\label{bsp__clk_8c_ab49a7b00510a2168c4aec729c6a9e9ad}} 
+\index{bsp\_clk.c@{bsp\_clk.c}!Delay\_Blocking@{Delay\_Blocking}}
+\index{Delay\_Blocking@{Delay\_Blocking}!bsp\_clk.c@{bsp\_clk.c}}
+\doxysubsubsection{\texorpdfstring{Delay\_Blocking()}{Delay\_Blocking()}}
+{\footnotesize\ttfamily void Delay\+\_\+\+Blocking (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{period\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+This funtion is a blocking delay, OSSched won\textquotesingle{}t be called. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em period\+\_\+ms} & in millisecond \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file bsp\+\_\+clk.\+c.
+
+\mbox{\Hypertarget{bsp__clk_8c_a94c788b22aefc860ec5a667c84236b6c}\label{bsp__clk_8c_a94c788b22aefc860ec5a667c84236b6c}} 
+\index{bsp\_clk.c@{bsp\_clk.c}!Delay\_NonBlocking@{Delay\_NonBlocking}}
+\index{Delay\_NonBlocking@{Delay\_NonBlocking}!bsp\_clk.c@{bsp\_clk.c}}
+\doxysubsubsection{\texorpdfstring{Delay\_NonBlocking()}{Delay\_NonBlocking()}}
+{\footnotesize\ttfamily void Delay\+\_\+\+Non\+Blocking (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{period\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+This function is a non-\/blocking delay which means other tasks can run during the delay. OSSched() is called to schedule which task run next. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em period\+\_\+ms} & in millisecond \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file bsp\+\_\+clk.\+c.
+

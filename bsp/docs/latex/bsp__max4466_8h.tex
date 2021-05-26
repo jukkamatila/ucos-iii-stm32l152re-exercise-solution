@@ -1,0 +1,70 @@
+\hypertarget{bsp__max4466_8h}{}\doxysection{bsp\+\_\+max4466.\+h File Reference}
+\label{bsp__max4466_8h}\index{bsp\_max4466.h@{bsp\_max4466.h}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}\label{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}} 
+\#define \mbox{\hyperlink{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}{ADC\+\_\+\+BUFFER\+\_\+\+SIZE}}~4096
+\begin{DoxyCompactList}\small\item\em size of the buffer used by ADC \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{bsp__max4466_8h_a0ca1129880b1b2a9d7adc3bf9c95676a}{MAX4466\+\_\+\+Read}} ()
+\begin{DoxyCompactList}\small\item\em This function reads analog signal and convert to voltage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__max4466_8h_a2e3ed0aa83700cdbdec56983af1bc53f}\label{bsp__max4466_8h_a2e3ed0aa83700cdbdec56983af1bc53f}} 
+void \mbox{\hyperlink{bsp__max4466_8h_a2e3ed0aa83700cdbdec56983af1bc53f}{MAX4466\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em This function initializes ADC and DMA to convert MAX4466 ouput to voltage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__max4466_8h_a53e41d17d40e0d6482ad0d73cb473a79}{MAX4466\+\_\+\+Print}} (UART\+\_\+\+Handle\+Type\+Def $\ast$uart)
+\begin{DoxyCompactList}\small\item\em This function print calculated voltage to USART. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__max4466_8h_aca7f21e220653e353491bceced7c5df3}\label{bsp__max4466_8h_aca7f21e220653e353491bceced7c5df3}} 
+void \mbox{\hyperlink{bsp__max4466_8h_aca7f21e220653e353491bceced7c5df3}{MX\+\_\+\+ADC\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initialize ADC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__max4466_8h_a323249dac769f9855c10b4ec9446b707}\label{bsp__max4466_8h_a323249dac769f9855c10b4ec9446b707}} 
+void \mbox{\hyperlink{bsp__max4466_8h_a323249dac769f9855c10b4ec9446b707}{MX\+\_\+\+DMA\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initialize DMA to use with ADC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8h_a62fcafba91cf315db7e0e0c8f22c656f}\label{bsp__max4466_8h_a62fcafba91cf315db7e0e0c8f22c656f}} 
+ADC\+\_\+\+Handle\+Type\+Def {\bfseries hadc}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__max4466_8h_a53e41d17d40e0d6482ad0d73cb473a79}\label{bsp__max4466_8h_a53e41d17d40e0d6482ad0d73cb473a79}} 
+\index{bsp\_max4466.h@{bsp\_max4466.h}!MAX4466\_Print@{MAX4466\_Print}}
+\index{MAX4466\_Print@{MAX4466\_Print}!bsp\_max4466.h@{bsp\_max4466.h}}
+\doxysubsubsection{\texorpdfstring{MAX4466\_Print()}{MAX4466\_Print()}}
+{\footnotesize\ttfamily void MAX4466\+\_\+\+Print (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{uart }\end{DoxyParamCaption})}
+
+
+
+This function print calculated voltage to USART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart} & a pointer to UART handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file bsp\+\_\+max4466.\+c.
+
+\mbox{\Hypertarget{bsp__max4466_8h_a0ca1129880b1b2a9d7adc3bf9c95676a}\label{bsp__max4466_8h_a0ca1129880b1b2a9d7adc3bf9c95676a}} 
+\index{bsp\_max4466.h@{bsp\_max4466.h}!MAX4466\_Read@{MAX4466\_Read}}
+\index{MAX4466\_Read@{MAX4466\_Read}!bsp\_max4466.h@{bsp\_max4466.h}}
+\doxysubsubsection{\texorpdfstring{MAX4466\_Read()}{MAX4466\_Read()}}
+{\footnotesize\ttfamily double MAX4466\+\_\+\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function reads analog signal and convert to voltage. 
+
+\begin{DoxyReturn}{Returns}
+voltage 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file bsp\+\_\+max4466.\+c.
+

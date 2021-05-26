@@ -1,0 +1,106 @@
+\hypertarget{bsp__led_8c}{}\doxysection{bsp\+\_\+led.\+c File Reference}
+\label{bsp__led_8c}\index{bsp\_led.c@{bsp\_led.c}}
+{\ttfamily \#include $<$bsp\+\_\+led.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__led_8c_a808b3705cf3f0eed81b757376787f288}{LED\+\_\+\+Init}} (GPIO\+\_\+\+Type\+Def $\ast$led\+\_\+port, uint16\+\_\+t led\+\_\+pin, GPIO\+\_\+\+Pin\+State led\+\_\+state)
+\begin{DoxyCompactList}\small\item\em This function is used to initialize GPIO pins that used for LEDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__led_8c_acc08ff6ac06264643f4ef173ca8a2846}{LED\+\_\+\+Off}} (GPIO\+\_\+\+Type\+Def $\ast$led\+\_\+port, uint16\+\_\+t led\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em This function is used to turn LED off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__led_8c_a7e482dc51297fe8afda2bd742fb6d2bc}{LED\+\_\+\+On}} (GPIO\+\_\+\+Type\+Def $\ast$led\+\_\+port, uint16\+\_\+t led\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em This function is used to turn LED on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__led_8c_a288b27b6ae1e357b262f38fd53e7f9ce}{LED\+\_\+\+Toggle}} (GPIO\+\_\+\+Type\+Def $\ast$led\+\_\+port, uint16\+\_\+t led\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em This function is used to toggle LED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__led_8c_a808b3705cf3f0eed81b757376787f288}\label{bsp__led_8c_a808b3705cf3f0eed81b757376787f288}} 
+\index{bsp\_led.c@{bsp\_led.c}!LED\_Init@{LED\_Init}}
+\index{LED\_Init@{LED\_Init}!bsp\_led.c@{bsp\_led.c}}
+\doxysubsubsection{\texorpdfstring{LED\_Init()}{LED\_Init()}}
+{\footnotesize\ttfamily void LED\+\_\+\+Init (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{led\+\_\+port,  }\item[{uint16\+\_\+t}]{led\+\_\+pin,  }\item[{GPIO\+\_\+\+Pin\+State}]{led\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+This function is used to initialize GPIO pins that used for LEDs. 
+
+\begin{DoxyNote}{Note}
+To make sure \mbox{\hyperlink{bsp__led_8h_a7e482dc51297fe8afda2bd742fb6d2bc}{LED\+\_\+\+On()}} and \mbox{\hyperlink{bsp__led_8h_acc08ff6ac06264643f4ef173ca8a2846}{LED\+\_\+\+Off()}} work correctly LED (+) pins should be connected to GPIO pins and LED (-\/) pins should be connected to GND.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led\+\_\+port} & GPIO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+pin} & GPIO pin \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+state} & GPIO state (SET/\+RESET) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6 of file bsp\+\_\+led.\+c.
+
+\mbox{\Hypertarget{bsp__led_8c_acc08ff6ac06264643f4ef173ca8a2846}\label{bsp__led_8c_acc08ff6ac06264643f4ef173ca8a2846}} 
+\index{bsp\_led.c@{bsp\_led.c}!LED\_Off@{LED\_Off}}
+\index{LED\_Off@{LED\_Off}!bsp\_led.c@{bsp\_led.c}}
+\doxysubsubsection{\texorpdfstring{LED\_Off()}{LED\_Off()}}
+{\footnotesize\ttfamily void LED\+\_\+\+Off (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{led\+\_\+port,  }\item[{uint16\+\_\+t}]{led\+\_\+pin }\end{DoxyParamCaption})}
+
+
+
+This function is used to turn LED off. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led\+\_\+port} & GPIO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+pin} & GPIO pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file bsp\+\_\+led.\+c.
+
+\mbox{\Hypertarget{bsp__led_8c_a7e482dc51297fe8afda2bd742fb6d2bc}\label{bsp__led_8c_a7e482dc51297fe8afda2bd742fb6d2bc}} 
+\index{bsp\_led.c@{bsp\_led.c}!LED\_On@{LED\_On}}
+\index{LED\_On@{LED\_On}!bsp\_led.c@{bsp\_led.c}}
+\doxysubsubsection{\texorpdfstring{LED\_On()}{LED\_On()}}
+{\footnotesize\ttfamily void LED\+\_\+\+On (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{led\+\_\+port,  }\item[{uint16\+\_\+t}]{led\+\_\+pin }\end{DoxyParamCaption})}
+
+
+
+This function is used to turn LED on. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led\+\_\+port} & GPIO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+pin} & GPIO pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file bsp\+\_\+led.\+c.
+
+\mbox{\Hypertarget{bsp__led_8c_a288b27b6ae1e357b262f38fd53e7f9ce}\label{bsp__led_8c_a288b27b6ae1e357b262f38fd53e7f9ce}} 
+\index{bsp\_led.c@{bsp\_led.c}!LED\_Toggle@{LED\_Toggle}}
+\index{LED\_Toggle@{LED\_Toggle}!bsp\_led.c@{bsp\_led.c}}
+\doxysubsubsection{\texorpdfstring{LED\_Toggle()}{LED\_Toggle()}}
+{\footnotesize\ttfamily void LED\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{led\+\_\+port,  }\item[{uint16\+\_\+t}]{led\+\_\+pin }\end{DoxyParamCaption})}
+
+
+
+This function is used to toggle LED. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led\+\_\+port} & GPIO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+pin} & GPIO pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file bsp\+\_\+led.\+c.
+
