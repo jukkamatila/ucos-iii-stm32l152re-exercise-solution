@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "bsp_ssd1306_cfg.h": "c",
+        "bsp_bmp280_cfg.h": "c",
+        "bsp_button_int.h": "c"
+    }
+}
