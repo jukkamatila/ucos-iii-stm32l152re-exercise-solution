@@ -6,11 +6,6 @@ extern "C"
 {
 #endif
 
-#include "stm32l1xx_hal.h"
-#include "os.h"
-#include "bsp_clk.h"
-#include "bsp_led.h"
-
 
 #ifdef __cplusplus
 }
