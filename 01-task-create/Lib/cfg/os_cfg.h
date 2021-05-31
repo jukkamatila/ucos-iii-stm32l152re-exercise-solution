@@ -43,7 +43,7 @@
 #define OS_CFG_SCHED_LOCK_TIME_MEAS_EN             0u           /* Include code to measure scheduler lock time                           */
 #define OS_CFG_SCHED_ROUND_ROBIN_EN                1u           /* Include code for Round-Robin scheduling                               */
 
-#define OS_CFG_STK_SIZE_MIN                       64u           /* Minimum allowable task stack size                                     */
+#define OS_CFG_STK_SIZE_MIN                       16u           /* Minimum allowable task stack size                                     */
 
 
                                                                 /* --------------------------- EVENT FLAGS ----------------------------- */

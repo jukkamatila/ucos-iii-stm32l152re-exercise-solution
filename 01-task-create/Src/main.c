@@ -1,23 +1,28 @@
+/*******************************************************************************
+ * INCLUDES
+*******************************************************************************/
 #include "main.h"
+#include "stm32l1xx_hal.h"
+#include "os.h"
+#include "bsp_clk.h"
+#include "bsp_led.h"
+
 
 /*******************************************************************************
  * DEFINES
 *******************************************************************************/
-
-#define APP_TASK_START_STK_SIZE 128u
+#define APP_TASK_START_STK_SIZE 18u
 #define APP_TASK_START_PRIO 1u
 
 /*******************************************************************************
  * VARIABLES
 *******************************************************************************/
-
 static OS_TCB AppTaskStartTCB;
 static CPU_STK AppTaskStartStk[APP_TASK_START_STK_SIZE];
 
 /*******************************************************************************
  * FUNCTION PROTOTYPES
 *******************************************************************************/
-
 static void AppTaskStart(void *p_arg);
 
 /*******************************************************************************
@@ -26,6 +31,10 @@ static void AppTaskStart(void *p_arg);
 
 int main(void)
 {
+    HAL_Init();
+    SystemClock_Config();
+    LED_Init();
+
     OS_ERR os_err;
     OSInit(&os_err);
 
@@ -66,15 +75,10 @@ int main(void)
 static void AppTaskStart(void *p_arg)
 {
     OS_ERR os_err;
-	
-    HAL_Init();
-    SystemClock_Config();
-
-    LED_Init(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
     
     while (DEF_TRUE)
     {
-        LED_Toggle(GPIOA, GPIO_PIN_5);
+        LED_Toggle();
         OSTimeDlyHMSM(0, 0, 0, 500, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
 }
