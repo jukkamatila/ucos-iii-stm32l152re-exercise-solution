@@ -73,23 +73,24 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;main.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#ab49a7b00510a2168c4aec729c6a9e9ad">Delay_Blocking</a>(uint32_t period_ms);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#a94c788b22aefc860ec5a667c84236b6c">Delay_NonBlocking</a>(uint32_t period_ms);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;stm32l1xx_hal.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;os.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#ab49a7b00510a2168c4aec729c6a9e9ad">Delay_Blocking</a>(uint32_t period_ms);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#a94c788b22aefc860ec5a667c84236b6c">Delay_NonBlocking</a>(uint32_t period_ms);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__clk_8h.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __BSP_CLK_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __BSP_CLK_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="absp__clk_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="bsp__clk_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is called when errors occur.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__clk_8c_source.html#l00038">bsp_clk.c:38</a></div></div>
 <div class="ttc" id="absp__clk_8h_html_a70af21c671abfcc773614a9a4f63d920"><div class="ttname"><a href="bsp__clk_8h.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a></div><div class="ttdeci">void SystemClock_Config(void)</div><div class="ttdoc">This function is used to configurate system clock.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__clk_8c_source.html#l00046">bsp_clk.c:46</a></div></div>
 <div class="ttc" id="absp__clk_8h_html_a94c788b22aefc860ec5a667c84236b6c"><div class="ttname"><a href="bsp__clk_8h.html#a94c788b22aefc860ec5a667c84236b6c">Delay_NonBlocking</a></div><div class="ttdeci">void Delay_NonBlocking(uint32_t period_ms)</div><div class="ttdoc">This function is a non-blocking delay which means other tasks can run during the delay....</div><div class="ttdef"><b>Definition:</b> <a href="bsp__clk_8c_source.html#l00027">bsp_clk.c:27</a></div></div>

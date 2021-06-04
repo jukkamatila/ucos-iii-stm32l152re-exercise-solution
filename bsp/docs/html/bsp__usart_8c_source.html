@@ -65,62 +65,72 @@ $(function() {
 <div class="title">bsp_usart.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bsp__usart_8h.html">bsp_usart.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;UART_HandleTypeDef huart2;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;stm32l1xx_hal.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bsp__clk_8h.html">bsp_clk.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bsp__usart_8h.html">bsp_usart.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="bsp__usart_8h.html#a052088fe5bb3f807a4b2502e664fd4fd">    5</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__usart_8h.html#a052088fe5bb3f807a4b2502e664fd4fd">MX_USART2_UART_Init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;UART_HandleTypeDef huart2;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  huart2.Instance = USART2;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  huart2.Init.BaudRate = 115200;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  huart2.Init.WordLength = UART_WORDLENGTH_8B;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  huart2.Init.StopBits = UART_STOPBITS_1;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  huart2.Init.Parity = UART_PARITY_NONE;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  huart2.Init.Mode = UART_MODE_TX_RX;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  huart2.Init.OverSampling = UART_OVERSAMPLING_16;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span> (HAL_UART_Init(&amp;huart2) != HAL_OK)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="bsp__clk_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="bsp__usart_8h.html#ad5cbed2a2222bb84e8b5c1caaa50634e">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__usart_8h.html#ad5cbed2a2222bb84e8b5c1caaa50634e">UART_Init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  huart2.Instance = USART2;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  huart2.Init.BaudRate = 115200;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  huart2.Init.WordLength = UART_WORDLENGTH_8B;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  huart2.Init.StopBits = UART_STOPBITS_1;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  huart2.Init.Parity = UART_PARITY_NONE;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  huart2.Init.Mode = UART_MODE_TX_RX;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  huart2.Init.OverSampling = UART_OVERSAMPLING_16;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">if</span> (HAL_UART_Init(&amp;huart2) != HAL_OK)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="bsp__clk_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span>(uartHandle-&gt;Instance==USART2)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">/* USART2 clock enable */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    __HAL_RCC_USART2_CLK_ENABLE();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    __HAL_RCC_GPIOA_CLK_ENABLE();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    GPIO_InitStruct.Pin = USART_TX_Pin|USART_RX_Pin;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF7_USART2;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span>(uartHandle-&gt;Instance==USART2)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    __HAL_RCC_USART2_CLK_DISABLE();</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="bsp__usart_8h.html#a7aeb7b0d2416d6e152d59358db08a992">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__usart_8h.html#a7aeb7b0d2416d6e152d59358db08a992">UART_Transmit</a>(uint8_t *p_data, uint16_t size)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  HAL_UART_Transmit(&amp;huart2, p_data, size, 100);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span>(uartHandle-&gt;Instance==USART2)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/* USART2 clock enable */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    __HAL_RCC_USART2_CLK_ENABLE();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    __HAL_RCC_GPIOA_CLK_ENABLE();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    GPIO_InitStruct.Pin = USART_TX_Pin|USART_RX_Pin;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF7_USART2;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    HAL_GPIO_DeInit(GPIOA, USART_TX_Pin|USART_RX_Pin);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span>(uartHandle-&gt;Instance==USART2)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    __HAL_RCC_USART2_CLK_DISABLE();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    HAL_GPIO_DeInit(GPIOA, USART_TX_Pin|USART_RX_Pin);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="ttc" id="absp__clk_8c_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="bsp__clk_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is called when errors occur.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__clk_8c_source.html#l00038">bsp_clk.c:38</a></div></div>
+<div class="ttc" id="absp__clk_8h_html"><div class="ttname"><a href="bsp__clk_8h.html">bsp_clk.h</a></div></div>
 <div class="ttc" id="absp__usart_8h_html"><div class="ttname"><a href="bsp__usart_8h.html">bsp_usart.h</a></div></div>
-<div class="ttc" id="absp__usart_8h_html_a052088fe5bb3f807a4b2502e664fd4fd"><div class="ttname"><a href="bsp__usart_8h.html#a052088fe5bb3f807a4b2502e664fd4fd">MX_USART2_UART_Init</a></div><div class="ttdeci">void MX_USART2_UART_Init(void)</div><div class="ttdoc">This function initializes USART2.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__usart_8c_source.html#l00005">bsp_usart.c:5</a></div></div>
+<div class="ttc" id="absp__usart_8h_html_a7aeb7b0d2416d6e152d59358db08a992"><div class="ttname"><a href="bsp__usart_8h.html#a7aeb7b0d2416d6e152d59358db08a992">UART_Transmit</a></div><div class="ttdeci">void UART_Transmit(uint8_t *p_data, uint16_t size)</div><div class="ttdoc">This function print a string to UART.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__usart_8c_source.html#l00025">bsp_usart.c:25</a></div></div>
+<div class="ttc" id="absp__usart_8h_html_ad5cbed2a2222bb84e8b5c1caaa50634e"><div class="ttname"><a href="bsp__usart_8h.html#ad5cbed2a2222bb84e8b5c1caaa50634e">UART_Init</a></div><div class="ttdeci">void UART_Init(void)</div><div class="ttdoc">This function initilizes USART2.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__usart_8c_source.html#l00008">bsp_usart.c:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

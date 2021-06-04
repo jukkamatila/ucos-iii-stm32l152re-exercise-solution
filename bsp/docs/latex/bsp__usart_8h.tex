@@ -19,12 +19,54 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{bsp__usart_8h_a052088fe5bb3f807a4b2502e664fd4fd}\label{bsp__usart_8h_a052088fe5bb3f807a4b2502e664fd4fd}} 
-void \mbox{\hyperlink{bsp__usart_8h_a052088fe5bb3f807a4b2502e664fd4fd}{MX\+\_\+\+USART2\+\_\+\+UART\+\_\+\+Init}} (void)
-\begin{DoxyCompactList}\small\item\em This function initializes USART2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{bsp__usart_8h_ad5cbed2a2222bb84e8b5c1caaa50634e}{UART\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initilizes USART2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__usart_8h_a7aeb7b0d2416d6e152d59358db08a992}{UART\+\_\+\+Transmit}} (uint8\+\_\+t $\ast$p\+\_\+data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em This function print a string to UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{bsp__usart_8h_aa9479c261d65eecedd3d9582f7f0f89c}\label{bsp__usart_8h_aa9479c261d65eecedd3d9582f7f0f89c}} 
 UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__usart_8h_ad5cbed2a2222bb84e8b5c1caaa50634e}\label{bsp__usart_8h_ad5cbed2a2222bb84e8b5c1caaa50634e}} 
+\index{bsp\_usart.h@{bsp\_usart.h}!UART\_Init@{UART\_Init}}
+\index{UART\_Init@{UART\_Init}!bsp\_usart.h@{bsp\_usart.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Init()}{UART\_Init()}}
+{\footnotesize\ttfamily void UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function initilizes USART2. 
+
+\begin{DoxyNote}{Note}
+This function should be called before using the \mbox{\hyperlink{bsp__usart_8h_a7aeb7b0d2416d6e152d59358db08a992}{UART\+\_\+\+Transmit()}} function 
+\end{DoxyNote}
+
+
+Definition at line 8 of file bsp\+\_\+usart.\+c.
+
+\mbox{\Hypertarget{bsp__usart_8h_a7aeb7b0d2416d6e152d59358db08a992}\label{bsp__usart_8h_a7aeb7b0d2416d6e152d59358db08a992}} 
+\index{bsp\_usart.h@{bsp\_usart.h}!UART\_Transmit@{UART\_Transmit}}
+\index{UART\_Transmit@{UART\_Transmit}!bsp\_usart.h@{bsp\_usart.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Transmit()}{UART\_Transmit()}}
+{\footnotesize\ttfamily void UART\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+\_\+data,  }\item[{uint16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+This function print a string to UART. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+data} & pointer to a string \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & size of the string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file bsp\+\_\+usart.\+c.
+
