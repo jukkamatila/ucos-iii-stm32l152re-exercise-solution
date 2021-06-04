@@ -238,24 +238,27 @@ void SSD1306_DrawCol(uint8_t col, uint8_t height)
     }
 }
 
-void SSD1306_SoundVisualize(uint8_t* p_data, uint8_t size, uint8_t max)
+void SSD1306_SoundLevel(uint8_t* p_data, uint8_t size)
 {
-    for(int i = 0; i < size; i ++)
+    if (size == SSD1306_WIDTH)
     {
-        for(int j = 0; j < SSD1306_BOARD_HEIGHT; j++)
+        for(int i = 0; i < size; i ++)
         {
-            if(j < *(p_data+i)/(max/SSD1306_BOARD_HEIGHT))
+            for(int j = 0; j < SSD1306_BOARD_HEIGHT; j++)
             {
-                SSD1306_DrawPixel(i,j, SSD1306_PIXEL_ON);
-            }
-            else
-            {
-                SSD1306_DrawPixel(i,j, SSD1306_PIXEL_OFF);
+                if(j < *(p_data + i)/3) //(max adc/BOARD_HEIGH = 3.175)
+                {
+                    SSD1306_DrawPixel(i,j, SSD1306_PIXEL_ON);
+                }
+                else
+                {
+                    SSD1306_DrawPixel(i,j, SSD1306_PIXEL_OFF);
 
+                }
             }
         }
+        SSD1306_UpdateDisp();
     }
-    SSD1306_UpdateDisp();
 }
 
 

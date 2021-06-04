@@ -81,7 +81,7 @@ static void AppTaskStart(void *p_arg)
     MX_USART2_UART_Init();
     MAX4466_Init();
     SSD1306_Init();
-    SSD1306_Board_PrintTitle(0, (uint8_t*)"Sound Visualization",20);
+    SSD1306_Board_PrintTitle(0, (uint8_t*)"Sound Level",12);
 
     OSQCreate(  (OS_Q*)&queue,
                 (CPU_CHAR*)"Message Queue to store voltages",
@@ -133,18 +133,20 @@ static void Task1(void *p_arg)
     {
         uint8_t msg[] = "\rTask 1\n\r";
         HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+
         for(int i = SSD1306_WIDTH - 1; i > 0; i--) 
         {
             oled_data[i] = oled_data[i-1];
         }
-        oled_data[0] = MAX4466_Read() - (255/2);
+        oled_data[0] = MAX4466_Read();
 
         OSQPost(    (OS_Q*)&queue,
                     (void *)oled_data,
                     (OS_MSG_SIZE)sizeof(oled_data),
                     (OS_OPT)OS_OPT_POST_FIFO,
                     (OS_ERR*)&os_err);
-        OSTimeDlyHMSM(0, 0, 0, 10, OS_OPT_TIME_HMSM_STRICT, &os_err);
+
+        OSTimeDlyHMSM(0, 0, 0, 5, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
 
 }
@@ -166,7 +168,7 @@ static void Task2(void *p_arg)
 
         uint8_t task2[] = "\rTask 2\n\r";
         HAL_UART_Transmit(&huart2, task2, sizeof(task2), 100);
-        SSD1306_SoundVisualize(recv, msg_size, 127);
-        OSTimeDlyHMSM(0, 0, 0, 10, OS_OPT_TIME_HMSM_STRICT, &os_err);
+        SSD1306_SoundLevel(recv, msg_size);
+        OSTimeDlyHMSM(0, 0, 0, 5, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
 }

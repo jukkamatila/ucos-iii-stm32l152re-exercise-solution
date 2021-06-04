@@ -3,7 +3,8 @@
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
 uint8_t adc_buff[ADC_BUFFER_SIZE];
-uint8_t adc_value;
+uint8_t adc_value = 0;
+uint8_t loudness = 0;
 
 void MAX4466_Init()
 {
@@ -14,14 +15,13 @@ void MAX4466_Init()
 uint8_t MAX4466_Read()
 {
     HAL_ADC_Start_DMA(&hadc, (uint32_t *)adc_buff, ADC_BUFFER_SIZE);
-    Delay_Blocking(25);
-    return adc_value;
+    return loudness;
 }
 
 void MAX4466_Print(UART_HandleTypeDef *uart)
 {
-    uint8_t msg[20];
-    sprintf((char *)msg, "\rVoltage = %.2f\n\r", (float)adc_value*3.3/255);
+    uint8_t msg[15];
+    sprintf((char *)msg, "\rADC = %d\n\r", adc_value);
     HAL_UART_Transmit(uart, msg, sizeof(msg), 100);
 }
 
@@ -49,7 +49,7 @@ void MX_ADC_Init(void)
   }
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_4CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_16CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -126,8 +126,8 @@ void DMA1_Channel1_IRQHandler(void)
 {
     HAL_DMA_IRQHandler(&hdma_adc);
     HAL_ADC_Stop_DMA(&hadc);
-    uint16_t max = 0;
-    uint16_t min = 256; 
+    uint8_t max = 0;
+    uint8_t min = 255; 
     for(int i = 0; i < ADC_BUFFER_SIZE; i++)
     {
         if(adc_buff[i] > max)
@@ -140,4 +140,15 @@ void DMA1_Channel1_IRQHandler(void)
         }
     }
     adc_value = (max-min);
+
+    /* MAX4466 Output = 1/2 input voltage when slient 
+     * Only take value > 1/2 input voltage = 255/2 = 127 */
+    if(adc_value > 127)
+    {
+      loudness = adc_value - 127;
+    }
+    else
+    {
+      loudness = 0;
+    }
 }

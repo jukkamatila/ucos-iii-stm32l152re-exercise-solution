@@ -800,14 +800,12 @@ void SSD1306_DrawLine(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
 void SSD1306_DrawCol(uint8_t col, uint8_t height);
 
 /**
- * @brief this function visualize sound
+ * @brief this function visualize sound level
  * 
  * @param[in] p_data pointer to data 
  * @param[in] size equals width of the display
- * @param[in] max max of the data input, it is used to scale the data 
- * to apporiate height on the display
  */
-void SSD1306_SoundVisualize(uint8_t* p_data, uint8_t size, uint8_t max);
+void SSD1306_SoundLevel(uint8_t* p_data, uint8_t size);
 
 
 /**
