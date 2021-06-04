@@ -1,3 +1,7 @@
+/**
+ * @file bsp_usart.h
+ */
+
 #ifndef __BSP_USART_H
 #define __BSP_USART_H
 
@@ -9,7 +13,21 @@ extern "C" {
 
 extern UART_HandleTypeDef huart2;
 
-void MX_USART2_UART_Init(void);
+/**
+ * @brief This function initilizes USART2. 
+ * 
+ * @note This function should be called before 
+ * using the UART_Transmit() function
+ */
+void UART_Init(void);
+
+/**
+ * @brief This function print a string to UART
+ * 
+ * @param[in] p_data pointer to a string
+ * @param[in] size size of the string
+ */
+void UART_Transmit(uint8_t *p_data, uint16_t size);
 
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA

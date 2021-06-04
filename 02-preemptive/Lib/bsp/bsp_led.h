@@ -1,3 +1,7 @@
+/**
+ * @file bsp_led.h
+ */
+
 #ifndef __BSP_LED_H
 #define __BSP_LED_H
 
@@ -6,43 +10,35 @@ extern "C"
 {
 #endif
 
-#include "main.h"
+#include "stm32l1xx_hal.h"
+
+#define LED_PORT    GPIOA
+#define LED_PIN     GPIO_PIN_5
 
 /**
  * @brief This function is used to initialize GPIO pins that used for LEDs.
  * 
  * @note To make sure LED_On() and LED_Off() work correctly LED (+) pins should
  * be connected to GPIO pins and LED (-) pins should be connected to GND.
- * 
- * @param[in] led_port: GPIO port
- * @param[in] led_pin: GPIO pin
- * @param[in] led_state: GPIO state (SET/RESET)
  */
-void LED_Init(GPIO_TypeDef *led_port, uint16_t led_pin, GPIO_PinState led_state);
+void LED_Init();
 
 /**
  * @brief This function is used to turn LED off
  * 
- * @param[in] led_port: GPIO port
- * @param[in] led_pin: GPIO pin
  */
-void LED_Off(GPIO_TypeDef *led_port, uint16_t led_pin);
+void LED_Off();
 
 /**
  * @brief This function is used to turn LED on
  * 
- * @param[in] led_port: GPIO port
- * @param[in] led_pin: GPIO pin
  */
-void LED_On(GPIO_TypeDef *led_port, uint16_t led_pin);
+void LED_On();
 
 /**
  * @brief This function is used to toggle LED 
- * 
- * @param[in] led_port: GPIO port
- * @param[in] led_pin: GPIO pin
  */
-void LED_Toggle(GPIO_TypeDef *led_port, uint16_t led_pin);
+void LED_Toggle();
 
 #ifdef __cplusplus
 }

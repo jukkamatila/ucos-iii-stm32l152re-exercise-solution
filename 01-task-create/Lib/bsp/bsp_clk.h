@@ -17,7 +17,7 @@ extern "C" {
  * 
  * @param[in] period_ms: in millisecond
  */
-void Delay_Blocking(uint16_t period_ms);
+void Delay_Blocking(uint32_t period_ms);
 
 /**
  * @brief This function is a non-blocking delay which means other tasks can
@@ -25,7 +25,7 @@ void Delay_Blocking(uint16_t period_ms);
  * 
  * @param[in] period_ms: in millisecond
  */
-void Delay_NonBlocking(uint16_t period_ms);
+void Delay_NonBlocking(uint32_t period_ms);
 
 /**
  * @brief This function is called when errors occur

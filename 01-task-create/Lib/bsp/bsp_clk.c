@@ -4,7 +4,7 @@
 
 #include "bsp_clk.h"
 
-void Delay_Blocking(uint16_t period_ms)
+void Delay_Blocking(uint32_t period_ms)
 {
     OS_ERR os_err;
     OS_TICK ticks = ((OSCfg_TickRate_Hz * 
@@ -24,7 +24,7 @@ void Delay_Blocking(uint16_t period_ms)
     }
 }
 
-void Delay_NonBlocking(uint16_t period_ms)
+void Delay_NonBlocking(uint32_t period_ms)
 {
     OS_ERR os_err;
     OSTimeDlyHMSM(period_ms / 3600000, 
