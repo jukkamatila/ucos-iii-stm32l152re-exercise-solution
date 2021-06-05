@@ -36,6 +36,7 @@ extern "C"
 #define SSD1306_BOARD_Y_OFFSET 4u
 #define SSD1306_BOARD_CELL_WIDTH 8u
 #define SSD1306_BOARD_CELL_HEIGHT 10u
+#define SSD1306_BOARD_MAX_CHAR 60u
 
 /** Original point to start print char to the board */
 #define SSD1306_BOARD_X0 2u

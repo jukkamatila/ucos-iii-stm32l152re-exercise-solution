@@ -324,8 +324,8 @@ void SSD1306_Board_Initialize(void)
 
 void SSD1306_Board_PrintChar(uint8_t board_col, uint8_t board_row, uint8_t c)
 {
-    if (board_col <= SSD1306_BOARD_WIDTH / SSD1306_BOARD_CELL_WIDTH &&
-        board_row <= SSD1306_BOARD_HEIGHT / SSD1306_BOARD_CELL_HEIGHT)
+    if (board_col < SSD1306_BOARD_WIDTH / SSD1306_BOARD_CELL_WIDTH &&
+        board_row < SSD1306_BOARD_HEIGHT / SSD1306_BOARD_CELL_HEIGHT)
     {
         for (uint8_t j = 0; j < SSD1306_FONT_WIDTH; j++)
         {
