@@ -30,10 +30,10 @@ static void ReadTask(void *p_arg);
  * Task 2: Defines and Variables
  * Task 2 send data to UART (temperature and humidity)
  ******************************************************************************/ 
-#define TASK_2_STK_SIZE 256u
-#define TASK_2_PRIO 2u
+#define PRINT_TASK_STK_SIZE 256u
+#define PRINT_TASK_PRIO 2u
 static OS_TCB PrintTaskTCB;
-static CPU_STK PrintTaskStk[TASK_2_STK_SIZE];
+static CPU_STK PrintTaskStk[PRINT_TASK_STK_SIZE];
 static void PrintTask(void *p_arg);
 
 /*******************************************************************************
@@ -127,10 +127,10 @@ static void AppTaskStart(void *p_arg)
         (CPU_CHAR *)"Task 2",
         (OS_TASK_PTR)PrintTask,
         (void *)0,
-        (OS_PRIO)TASK_2_PRIO,
+        (OS_PRIO)PRINT_TASK_PRIO,
         (CPU_STK *)&PrintTaskStk[0],
-        (CPU_STK_SIZE)TASK_2_STK_SIZE / 10,
-        (CPU_STK_SIZE)TASK_2_STK_SIZE,
+        (CPU_STK_SIZE)PRINT_TASK_STK_SIZE / 10,
+        (CPU_STK_SIZE)PRINT_TASK_STK_SIZE,
         (OS_MSG_QTY)5u,
         (OS_TICK)0u,
         (void *)0,
