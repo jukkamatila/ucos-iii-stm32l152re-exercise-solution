@@ -24,7 +24,7 @@ void UART_Init(void)
 
 void UART_Transmit(uint8_t *p_data, uint16_t size)
 {
-  HAL_UART_Transmit(&huart2, p_data, size, 100);
+  HAL_UART_Transmit(&huart2, p_data, size, HAL_MAX_DELAY);
 }
 
 void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
