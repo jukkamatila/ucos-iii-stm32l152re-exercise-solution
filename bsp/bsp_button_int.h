@@ -9,7 +9,8 @@
 extern "C" {
 #endif
 
-#include "main.h"
+#include "stm32l1xx_hal.h"
+#include "os.h"
 
 /**
  * @brief This function initialize button and EXTI (external interrupt)

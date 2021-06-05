@@ -10,21 +10,24 @@ extern "C"
 {
 #endif
 
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "stm32l1xx_hal.h"
+#include "bsp_clk.h"
 
 /**
  * @brief size of the buffer used by ADC 
  */
-#define ADC_BUFFER_SIZE 4096
+#define ADC_BUFFER_SIZE 800
 
 extern ADC_HandleTypeDef hadc;
 
 /**
  * @brief This function reads analog signal and convert to voltage
  * 
- * @return voltage
+ * @return adc_value [0-255] (0V-3.3V)
  */
-double MAX4466_Read();
+uint8_t MAX4466_Read();
 
 /**
  * @brief This function initializes ADC and DMA 
