@@ -2,7 +2,7 @@
  * @file bsp_bmp280_cfg.c
  */
 
-#include <bsp_bmp280_cfg.h>
+#include "bsp_bmp280_cfg.h"
 
 /*! @brief is used in BMP280_Setup() function when BMP280_SPI is defined */
 SPI_HandleTypeDef hspi1;

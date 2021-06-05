@@ -10,7 +10,11 @@
 extern "C" {
 #endif
 
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "stm32l1xx_hal.h"
+#include "bsp_bmp280.h"
+#include "bsp_clk.h"
 
 /*! @brief define BMP280_I2C or BMP280_SPI. Use only one of them */
 #define BMP280_I2C

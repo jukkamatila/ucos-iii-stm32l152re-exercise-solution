@@ -1,8 +1,11 @@
+#include "stm32l1xx_hal.h"
+#include "bsp_clk.h"
 #include "bsp_usart.h"
 
 UART_HandleTypeDef huart2;
 
-void MX_USART2_UART_Init(void)
+
+void UART_Init(void)
 {
 
   huart2.Instance = USART2;
@@ -17,6 +20,11 @@ void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
+}
+
+void UART_Transmit(uint8_t *p_data, uint16_t size)
+{
+  HAL_UART_Transmit(&huart2, p_data, size, 100);
 }
 
 void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)

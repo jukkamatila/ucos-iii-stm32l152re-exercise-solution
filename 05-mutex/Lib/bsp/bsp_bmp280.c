@@ -35,7 +35,7 @@
  * @version	v3.3.4
  *
  */
-#include <bsp_bmp280.h>
+#include "bsp_bmp280.h"
 
 /********************** Static function declarations ************************/
 

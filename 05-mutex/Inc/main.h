@@ -6,14 +6,6 @@ extern "C"
 {
 #endif
 
-#include <stdio.h>
-#include "stm32l1xx_hal.h"
-#include "os.h"
-#include "bsp_clk.h"
-#include "bsp_bmp280.h"
-#include "bsp_bmp280_cfg.h"
-#include "bsp_usart.h"
-#include "bsp_led.h"
 
 #ifdef __cplusplus
 }

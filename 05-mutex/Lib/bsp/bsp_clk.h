@@ -9,7 +9,8 @@
 extern "C" {
 #endif
 
-#include "main.h"
+#include "stm32l1xx_hal.h"
+#include "os.h"
 
 /**
  * @brief This funtion is a blocking delay, OSSched won't be called.
