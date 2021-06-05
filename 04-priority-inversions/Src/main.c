@@ -162,7 +162,11 @@ static void ReadTask(void *p_arg)
         uint8_t msg[] = "\rRead Task - run\n\r";
         HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
 
-        Delay_Blocking(5000);
+        for(int i = 0; i < 3; i++)
+        {
+            HAL_UART_Transmit(&huart2,(uint8_t *)"\rRead Task - running... \n\r", 27 , 100);
+            Delay_Blocking(1000);
+        }
         BMP280_Read();
 
         HAL_UART_Transmit(&huart2, (uint8_t *)"\rRead Task - OSSemPost\n\r", 25, 100);
