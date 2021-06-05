@@ -246,7 +246,7 @@ void SSD1306_SoundLevel(uint8_t* p_data, uint8_t size)
         {
             for(int j = 0; j < SSD1306_BOARD_HEIGHT; j++)
             {
-                if(j < *(p_data + i)/3) //(max adc/BOARD_HEIGH = 3.175)
+                if(j < *(p_data + i)*SSD1306_BOARD_HEIGHT/127) 
                 {
                     SSD1306_DrawPixel(i,j, SSD1306_PIXEL_ON);
                 }

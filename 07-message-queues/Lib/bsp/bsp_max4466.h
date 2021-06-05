@@ -18,7 +18,7 @@ extern "C"
 /**
  * @brief size of the buffer used by ADC 
  */
-#define ADC_BUFFER_SIZE 800
+#define ADC_BUFFER_SIZE 1600
 
 extern ADC_HandleTypeDef hadc;
 

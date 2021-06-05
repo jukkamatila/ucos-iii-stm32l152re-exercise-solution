@@ -15,6 +15,7 @@ void MAX4466_Init()
 uint8_t MAX4466_Read()
 {
     HAL_ADC_Start_DMA(&hadc, (uint32_t *)adc_buff, ADC_BUFFER_SIZE);
+    Delay_Blocking(15);
     return loudness;
 }
 
