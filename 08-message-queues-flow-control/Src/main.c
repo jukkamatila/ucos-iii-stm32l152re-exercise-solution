@@ -10,6 +10,11 @@
 #include "bsp_ssd1306_cfg.h"
 #include "bsp_max4466.h"
 
+struct OLED_Data_t{
+    uint8_t data[60];
+    uint8_t pos;
+};
+
 /*******************************************************************************
  * App Task Start: Defines and Variables
  ******************************************************************************/ 
@@ -40,10 +45,6 @@ static void Task2(void *p_arg);
 /*******************************************************************************
  * Shared resources
  ******************************************************************************/ 
-struct OLED_Data_t{
-    uint8_t data[60];
-    uint8_t pos;
-};
 
 OS_Q queue;
 OS_Q queue_pos;
