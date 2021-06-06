@@ -152,7 +152,7 @@ static void Task1(void *p_arg)
     while (DEF_TRUE)
     {
         uint8_t msg[] = "\rTask 1\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+        UART_Transmit(msg, sizeof(msg));
         BMP280_Read();
         OSFlagPost( (OS_FLAG_GRP *)&task_sync_flag,
                     (OS_FLAGS)BMP280_READ,
@@ -169,7 +169,7 @@ static void Task2(void *p_arg)
     while (DEF_TRUE)
     {
         uint8_t msg[] = "\rTask 2\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+        UART_Transmit(msg, sizeof(msg));
         MAX4466_Read();
         OSFlagPost( (OS_FLAG_GRP *)&task_sync_flag,
                     (OS_FLAGS)MAX4466_READ,
@@ -192,7 +192,7 @@ static void Task3(void *p_arg)
                     (CPU_TS *)NULL,
                     (OS_ERR*)&os_err);
         uint8_t msg[] = "\rTask 3\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+        UART_Transmit(msg, sizeof(msg));
         BMP280_Print(&huart2);
         MAX4466_Print(&huart2);
         OSTimeDlyHMSM(0, 0, 0, 500, OS_OPT_TIME_HMSM_STRICT, &os_err);
