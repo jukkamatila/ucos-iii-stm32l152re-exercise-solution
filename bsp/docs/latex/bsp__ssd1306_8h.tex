@@ -1,0 +1,1508 @@
+\hypertarget{bsp__ssd1306_8h}{}\doxysection{bsp\+\_\+ssd1306.\+h File Reference}
+\label{bsp__ssd1306_8h}\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32l1xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bsp\+\_\+ssd1306\+\_\+cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bsp\+\_\+ssd1306\+\_\+fonts.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ae5a2aa8865dd03537b97fd1c9037371b}\label{bsp__ssd1306_8h_ae5a2aa8865dd03537b97fd1c9037371b}} 
+\#define {\bfseries SSD1306\+\_\+\+WIDTH}~128u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a4e9409448a0df95c1686670e09b457b7}\label{bsp__ssd1306_8h_a4e9409448a0df95c1686670e09b457b7}} 
+\#define {\bfseries SSD1306\+\_\+\+HEIGHT}~64u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a64e2ef8e31b95efba11eb0505ed6619b}\label{bsp__ssd1306_8h_a64e2ef8e31b95efba11eb0505ed6619b}} 
+\#define {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO}~63u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a81850e77700fc93b8b3a3f2cf2df19e4}\label{bsp__ssd1306_8h_a81850e77700fc93b8b3a3f2cf2df19e4}} 
+\#define {\bfseries SSD1306\+\_\+\+DUMMY\+\_\+\+BYTE\+\_\+\+OFF}~0x00
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a7617053c8b7e88df236d13297e7c66d5}\label{bsp__ssd1306_8h_a7617053c8b7e88df236d13297e7c66d5}} 
+\#define {\bfseries SSD1306\+\_\+\+DUMMY\+\_\+\+BYTE\+\_\+\+ON}~0x\+FF
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a9ea7245bb2a38cfd269050adb5565831}\label{bsp__ssd1306_8h_a9ea7245bb2a38cfd269050adb5565831}} 
+\#define {\bfseries SSD1306\+\_\+\+SEG\+\_\+\+SIZE}~0x08
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_adbb52a129a0cc19e9ee64c54ed2d98d4}\label{bsp__ssd1306_8h_adbb52a129a0cc19e9ee64c54ed2d98d4}} 
+\#define {\bfseries SSD1306\+\_\+\+TITLE\+\_\+\+HEIGHT}~16u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ae7dcfde0522681ad1af7b990a4e2ae63}\label{bsp__ssd1306_8h_ae7dcfde0522681ad1af7b990a4e2ae63}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+HEIGHT}~40u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a29f4ae8bedb223c60fe921515dee14a5}\label{bsp__ssd1306_8h_a29f4ae8bedb223c60fe921515dee14a5}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+WIDTH}~120u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_acf932af34cab6d15b483e75ee8831c33}\label{bsp__ssd1306_8h_acf932af34cab6d15b483e75ee8831c33}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+X\+\_\+\+OFFSET}~3u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a5bd14885d48742dbfd265a0279518641}\label{bsp__ssd1306_8h_a5bd14885d48742dbfd265a0279518641}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+Y\+\_\+\+OFFSET}~4u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a266d3bdd02baa0f3f37ef298b375279a}\label{bsp__ssd1306_8h_a266d3bdd02baa0f3f37ef298b375279a}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+CELL\+\_\+\+WIDTH}~8u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a5c4ca9d0268f333264442ec94501bbb1}\label{bsp__ssd1306_8h_a5c4ca9d0268f333264442ec94501bbb1}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+CELL\+\_\+\+HEIGHT}~10u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a7635cb94c03f5db2ffba08c42f6d23dc}\label{bsp__ssd1306_8h_a7635cb94c03f5db2ffba08c42f6d23dc}} 
+\#define {\bfseries SSD1306\+\_\+\+BOARD\+\_\+\+MAX\+\_\+\+CHAR}~60u
+\item 
+\#define \mbox{\hyperlink{bsp__ssd1306_8h_ac75d02b90d91a92c888a9c4afd4edb16}{SSD1306\+\_\+\+BOARD\+\_\+\+X0}}~2u
+\item 
+\#define \mbox{\hyperlink{bsp__ssd1306_8h_a9e184ac2af4771b8cacbcbea2ef6e589}{SSd1306\+\_\+\+BOARD\+\_\+\+Y0}}~1u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a68e22101a5c297461c77c20e511164cf}\label{bsp__ssd1306_8h_a68e22101a5c297461c77c20e511164cf}} 
+\#define {\bfseries SSD1306\+\_\+\+FONT\+\_\+\+HEIGHT}~8u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_abbf08ff398a7227c95eea3cca1f4f39a}\label{bsp__ssd1306_8h_abbf08ff398a7227c95eea3cca1f4f39a}} 
+\#define {\bfseries SSD1306\+\_\+\+FONT\+\_\+\+WIDTH}~6u
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a25ae2edcb34f24dd656ce9b51ce84b78}\label{bsp__ssd1306_8h_a25ae2edcb34f24dd656ce9b51ce84b78}} 
+\#define {\bfseries SSD1306\+\_\+\+CONSTRAST}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a67228b45b508f242b898ff71c1ed7fad}\label{bsp__ssd1306_8h_a67228b45b508f242b898ff71c1ed7fad}} 
+enum {\bfseries SSD1306\+\_\+\+Error\+Code\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+OK}
+, {\bfseries SSD1306\+\_\+\+WRITECMD\+\_\+\+FAILED}
+, {\bfseries SSD1306\+\_\+\+WRITEDATA\+\_\+\+FAILED}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ad3df24691d8df1f88b1920434a9215ba}\label{bsp__ssd1306_8h_ad3df24691d8df1f88b1920434a9215ba}} 
+enum {\bfseries SSD1306\+\_\+\+Mem\+Addr\+Mode\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+MEM\+\_\+\+ADDR\+\_\+\+HORIZONTAL\+\_\+\+MODE}
+, {\bfseries SSD1306\+\_\+\+MEM\+\_\+\+ADDR\+\_\+\+VERTICAL\+\_\+\+MODE}
+, {\bfseries SSD1306\+\_\+\+MEM\+\_\+\+ADDR\+\_\+\+PAGE\+\_\+\+MODE}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a9533bf35b5615c1519ca9bcf10d1f8d8}\label{bsp__ssd1306_8h_a9533bf35b5615c1519ca9bcf10d1f8d8}} 
+enum {\bfseries SSD1306\+\_\+\+Page\+Addr\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+0}
+, {\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+1}
+, {\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+2}
+, {\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+3}
+, \newline
+{\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+4}
+, {\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+5}
+, {\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+6}
+, {\bfseries SSD1306\+\_\+\+PAGE\+\_\+\+ADDR\+\_\+7}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a6bc8e9254a46bf0fb911ed3651ce8bd2}\label{bsp__ssd1306_8h_a6bc8e9254a46bf0fb911ed3651ce8bd2}} 
+enum {\bfseries SSD1306\+\_\+\+Scroll\+Frame\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+SCROLL\+\_\+5\+\_\+\+FRAME}
+, {\bfseries SSD1306\+\_\+\+SCROLL\+\_\+64\+\_\+\+FRAME}
+, {\bfseries SSD1306\+\_\+\+SCROLL\+\_\+128\+\_\+\+FRAME}
+, {\bfseries SSD1306\+\_\+\+SCROLL\+\_\+256\+\_\+\+FRAME}
+, \newline
+{\bfseries SSD1306\+\_\+\+SCROLL\+\_\+3\+\_\+\+FRAME}
+, {\bfseries SSD1306\+\_\+\+SCROLL\+\_\+4\+\_\+\+FRAME}
+, {\bfseries SSD1306\+\_\+\+SCROLL\+\_\+25\+\_\+\+FRAME}
+, {\bfseries SSD1306\+\_\+\+SCROLL\+\_\+2\+\_\+\+FRAME}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ac4e8b7497e12e73b0234ab0ff992f8e0}\label{bsp__ssd1306_8h_ac4e8b7497e12e73b0234ab0ff992f8e0}} 
+enum {\bfseries SSD1306\+\_\+\+VCOMHDeselect\+Level\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+VCOMH\+\_\+065\+\_\+\+VCC} = 0x00
+, {\bfseries SSD1306\+\_\+\+VCOMH\+\_\+077\+\_\+\+VCC} = 0x20
+, {\bfseries SSD1306\+\_\+\+VCOMH\+\_\+083\+\_\+\+VCC} = 0x30
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_abc09304fdfb75c3421ca41909659597f}\label{bsp__ssd1306_8h_abc09304fdfb75c3421ca41909659597f}} 
+enum {\bfseries SSD1306\+\_\+\+Inverse\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+NORMAL\+\_\+\+DISP}
+, {\bfseries SSD1306\+\_\+\+INVERSE\+\_\+\+DISP}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a2ae15acd74fd58cfce4f31c28bca03d8}\label{bsp__ssd1306_8h_a2ae15acd74fd58cfce4f31c28bca03d8}} 
+enum {\bfseries SSD1306\+\_\+\+Disp\+State\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+DISP\+\_\+\+OFF}
+, {\bfseries SSD1306\+\_\+\+DISP\+\_\+\+ON}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a43b79ba6662089b073ea6e715a8f55df}\label{bsp__ssd1306_8h_a43b79ba6662089b073ea6e715a8f55df}} 
+enum {\bfseries SSD1306\+\_\+\+Horizontal\+Scroll\+Direction\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+RIGHT\+\_\+\+SCROLL} = 0x01
+, {\bfseries SSD1306\+\_\+\+LEFT\+\_\+\+SCROLL}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ab923667a71eaf50a998a8df8730bf7ad}\label{bsp__ssd1306_8h_ab923667a71eaf50a998a8df8730bf7ad}} 
+enum {\bfseries SSD1306\+\_\+\+Segment\+Remap\+Direction\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+SEG\+\_\+\+REMAP\+\_\+\+NORM}
+, {\bfseries SSD1306\+\_\+\+SEG\+\_\+\+REMAP\+\_\+\+INVERSE}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a67afe35adf8ed9b605ca43f27cf0443a}\label{bsp__ssd1306_8h_a67afe35adf8ed9b605ca43f27cf0443a}} 
+enum {\bfseries SSD1306\+\_\+\+COMOutput\+Scan\+Direction\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+FROM\+\_\+\+COM0} = 0x00
+, {\bfseries SSD1306\+\_\+\+TO\+\_\+\+COM0} = 0x08
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a3232ad980ca11b5f2302d1e4a329faea}\label{bsp__ssd1306_8h_a3232ad980ca11b5f2302d1e4a329faea}} 
+enum {\bfseries SSD1306\+\_\+\+Pin\+Config\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+PIN\+\_\+\+CFG\+\_\+\+SEQUENT} = 0x02
+, {\bfseries SSD1306\+\_\+\+PIN\+\_\+\+CFG\+\_\+\+ALTER} = 0x12
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a3d647222b205da922c90292e31cfb76e}\label{bsp__ssd1306_8h_a3d647222b205da922c90292e31cfb76e}} 
+enum {\bfseries SSD1306\+\_\+\+COMRemap\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+COM\+\_\+\+REMAP\+\_\+\+DISABLE} = 0x02
+, {\bfseries SSD1306\+\_\+\+COM\+\_\+\+REMAP\+\_\+\+ENABLE} = 0x22
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_aac730241ddb118ae34579b86b0c366dc}\label{bsp__ssd1306_8h_aac730241ddb118ae34579b86b0c366dc}} 
+enum {\bfseries SSD1306\+\_\+\+Charge\+Bump\+State\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+CHARGE\+\_\+\+BUMP\+\_\+\+DISABLE} = 0x10
+, {\bfseries SSD1306\+\_\+\+CHARGE\+\_\+\+BUMP\+\_\+\+ENABLE} = 0x14
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a5c797482fe4c36bd1e518638f079f596}\label{bsp__ssd1306_8h_a5c797482fe4c36bd1e518638f079f596}} 
+enum {\bfseries SSD1306\+\_\+\+Pixel\+State\+\_\+t} \{ {\bfseries SSD1306\+\_\+\+PIXEL\+\_\+\+OFF}
+, {\bfseries SSD1306\+\_\+\+PIXEL\+\_\+\+ON}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_aef86ed487971938606a4c6b17f7cb613}\label{bsp__ssd1306_8h_aef86ed487971938606a4c6b17f7cb613}} 
+enum {\bfseries SSD1306\+\_\+\+Col\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+0}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+1}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+2}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+3}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+4}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+5}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+6}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+7}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+8}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+9}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+10}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+11}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+12}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+13}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+14}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+15}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+16}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+17}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+18}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+19}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+20}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+21}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+22}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+23}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+24}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+25}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+26}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+27}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+28}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+29}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+30}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+31}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+32}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+33}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+34}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+35}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+36}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+37}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+38}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+39}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+40}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+41}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+42}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+43}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+44}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+45}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+46}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+47}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+48}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+49}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+50}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+51}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+52}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+53}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+54}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+55}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+56}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+57}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+58}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+59}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+60}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+61}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+62}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+63}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+64}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+65}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+66}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+67}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+68}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+69}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+70}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+71}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+72}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+73}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+74}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+75}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+76}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+77}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+78}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+79}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+80}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+81}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+82}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+83}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+84}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+85}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+86}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+87}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+88}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+89}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+90}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+91}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+92}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+93}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+94}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+95}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+96}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+97}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+98}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+99}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+100}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+101}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+102}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+103}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+104}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+105}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+106}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+107}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+108}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+109}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+110}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+111}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+112}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+113}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+114}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+115}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+116}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+117}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+118}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+119}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+120}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+121}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+122}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+123}
+, \newline
+{\bfseries SSD1306\+\_\+\+COL\+\_\+124}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+125}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+126}
+, {\bfseries SSD1306\+\_\+\+COL\+\_\+127}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ac9ed5c3b5b17db2420524d3ae904ede5}\label{bsp__ssd1306_8h_ac9ed5c3b5b17db2420524d3ae904ede5}} 
+enum {\bfseries SSD1306\+\_\+\+Row\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+0}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+1}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+2}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+3}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+4}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+5}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+6}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+7}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+8}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+9}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+10}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+11}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+12}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+13}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+14}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+15}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+16}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+17}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+18}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+19}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+20}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+21}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+22}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+23}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+24}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+25}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+26}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+27}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+28}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+29}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+30}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+31}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+32}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+33}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+34}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+35}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+36}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+37}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+38}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+39}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+40}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+41}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+42}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+43}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+44}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+45}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+46}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+47}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+48}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+49}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+50}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+51}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+52}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+53}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+54}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+55}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+56}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+57}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+58}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+59}
+, \newline
+{\bfseries SSD1306\+\_\+\+ROW\+\_\+60}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+61}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+62}
+, {\bfseries SSD1306\+\_\+\+ROW\+\_\+63}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a700d482852b31cd1a5aee49a73d538a9}\label{bsp__ssd1306_8h_a700d482852b31cd1a5aee49a73d538a9}} 
+enum {\bfseries SSD1306\+\_\+\+MUXRatio\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+15}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+16}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+17}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+18}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+19}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+20}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+21}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+22}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+23}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+24}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+25}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+26}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+27}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+28}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+29}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+30}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+31}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+32}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+33}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+34}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+35}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+36}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+37}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+38}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+39}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+40}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+41}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+42}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+43}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+44}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+45}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+46}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+47}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+48}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+49}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+50}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+51}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+52}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+53}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+54}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+55}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+56}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+57}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+58}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+59}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+60}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+61}
+, {\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+62}
+, \newline
+{\bfseries SSD1306\+\_\+\+MUX\+\_\+\+RATIO\+\_\+63}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a944834f78c8a3d4660e1e9fee008afd3}\label{bsp__ssd1306_8h_a944834f78c8a3d4660e1e9fee008afd3}} 
+enum {\bfseries SSD1306\+\_\+\+Clk\+Ratio\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+0}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+1}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+2}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+3}
+, \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+4}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+5}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+6}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+7}
+, \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+8}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+9}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+10}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+11}
+, \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+12}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+13}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+14}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+RATIO\+\_\+15}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a33e7938b579ca30548b21a06aadcafa6}\label{bsp__ssd1306_8h_a33e7938b579ca30548b21a06aadcafa6}} 
+enum {\bfseries SSD1306\+\_\+\+Clk\+Frq\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+0}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+1}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+2}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+3}
+, \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+4}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+5}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+6}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+7}
+, \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+8}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+9}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+10}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+11}
+, \newline
+{\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+12}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+13}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+14}
+, {\bfseries SSD1306\+\_\+\+CLK\+\_\+\+FRQ\+\_\+15}
+ \}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a86b7364799bf0bcf8987856f470b02c7}\label{bsp__ssd1306_8h_a86b7364799bf0bcf8987856f470b02c7}} 
+enum {\bfseries SSD1306\+\_\+\+Phase\+\_\+t} \{ \newline
+{\bfseries SSD1306\+\_\+\+PHASE\+\_\+1} = 1
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+2}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+3}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+4}
+, \newline
+{\bfseries SSD1306\+\_\+\+PHASE\+\_\+5}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+6}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+7}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+8}
+, \newline
+{\bfseries SSD1306\+\_\+\+PHASE\+\_\+9}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+10}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+11}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+12}
+, \newline
+{\bfseries SSD1306\+\_\+\+PHASE\+\_\+13}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+14}
+, {\bfseries SSD1306\+\_\+\+PHASE\+\_\+15}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_ac7df777e70fca4e6e5036e80cb6ce21d}{SSD1306\+\_\+\+Set\+Constrast}} (uint8\+\_\+t constrast)
+\begin{DoxyCompactList}\small\item\em this function changes the constrast value of the display \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a3990f24c978929dc6af54b29dde4cc67}\label{bsp__ssd1306_8h_a3990f24c978929dc6af54b29dde4cc67}} 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a3990f24c978929dc6af54b29dde4cc67}{SSD1306\+\_\+\+Entire\+Disp\+On\+Soft}} (void)
+\begin{DoxyCompactList}\small\item\em this function turns entire display ON and resume to RAM content display. Output follows RAM content. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a34eaf5630eafedd72cc87613b982ed3b}\label{bsp__ssd1306_8h_a34eaf5630eafedd72cc87613b982ed3b}} 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a34eaf5630eafedd72cc87613b982ed3b}{SSD1306\+\_\+\+Entire\+Disp\+On\+Hard}} (void)
+\begin{DoxyCompactList}\small\item\em this funtion turns entire display ON. Output ignores RAM content \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_af99583f60d604da6f06b37be4a50c6dc}{SSD1306\+\_\+\+Inverse\+Disp}} (SSD1306\+\_\+\+Inverse\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em this function inverse display color \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a294c5a0457fd92485c4b77d54b172254}{SSD1306\+\_\+\+Disp\+On\+Off}} (SSD1306\+\_\+\+Disp\+State\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em turn display ON or OFF \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a1c5531d243a92767553028f657c7c8cb}{SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Scroll}} (SSD1306\+\_\+\+Horizontal\+Scroll\+Direction\+\_\+t direct, SSD1306\+\_\+\+Page\+Addr\+\_\+t start\+\_\+page, SSD1306\+\_\+\+Scroll\+Frame\+\_\+t frame, SSD1306\+\_\+\+Page\+Addr\+\_\+t end\+\_\+page)
+\begin{DoxyCompactList}\small\item\em this function setups the horizontal scroll parameters and determines the scrolling start page, end page and scrolling spped \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a2eb472b882a565a27d54df191f22b97b}{SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Vertical\+Scroll}} (SSD1306\+\_\+\+Horizontal\+Scroll\+Direction\+\_\+t direct, SSD1306\+\_\+\+Page\+Addr\+\_\+t start\+\_\+page, SSD1306\+\_\+\+Scroll\+Frame\+\_\+t frame, SSD1306\+\_\+\+Page\+Addr\+\_\+t end\+\_\+page, SSD1306\+\_\+\+Row\+\_\+t offset)
+\begin{DoxyCompactList}\small\item\em this function setups the continuous veritcal scroll parameters and determines the scrolling start page, end page, scrolling speed and vertical scrolling offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_ae52aaf442d4977c2526c26137c8cf922}{SSD1306\+\_\+\+Deactive\+Scroll}} (void)
+\begin{DoxyCompactList}\small\item\em this function deactivates scrolling \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a131e398a11d6f99ab1b70a162c365a45}{SSD1306\+\_\+\+Active\+Scroll}} (void)
+\begin{DoxyCompactList}\small\item\em this function activate scrollling \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a72c3b7cf820ee2299689276330e38d4d}{SSD1306\+\_\+\+Set\+Vertical\+Scroll\+Area}} (SSD1306\+\_\+\+Row\+\_\+t n\+\_\+fixed\+\_\+row, SSD1306\+\_\+\+Row\+\_\+t n\+\_\+scroll\+\_\+row)
+\begin{DoxyCompactList}\small\item\em set up the vertical scroll area ~\newline
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a5aa5188b650ef7bcca4956260c415c35}{SSD1306\+\_\+\+Set\+Mem\+Addr\+Mode}} (SSD1306\+\_\+\+Mem\+Addr\+Mode\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em this function sets memory addressing mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a9b078b260fc41c0bde240227353d6259}{SSD1306\+\_\+\+Set\+Col\+Addr}} (SSD1306\+\_\+\+Col\+\_\+t col\+\_\+start, SSD1306\+\_\+\+Col\+\_\+t col\+\_\+end)
+\begin{DoxyCompactList}\small\item\em this function set column start address and end adress of the display data RAM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a894832e97f84f35bbe464bbbdea4ce99}{SSD1306\+\_\+\+Set\+Page\+Addr}} (SSD1306\+\_\+\+Page\+Addr\+\_\+t start\+\_\+page, SSD1306\+\_\+\+Page\+Addr\+\_\+t end\+\_\+page)
+\begin{DoxyCompactList}\small\item\em this function set start page address and end page address of the display data RAM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_aa38006b8ead560ab5dea4cd32a838f4d}{SSD1306\+\_\+\+Set\+Page\+Start\+Addr}} (SSD1306\+\_\+\+Page\+Addr\+\_\+t start\+\_\+page, SSD1306\+\_\+\+Col\+\_\+t seg)
+\begin{DoxyCompactList}\small\item\em this function set start page address and column(segment) start address \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a43d23634a1c2ae60e70a902bdcc9f361}{SSD1306\+\_\+\+Set\+Disp\+Start\+Line}} (SSD1306\+\_\+\+Row\+\_\+t start\+\_\+line)
+\begin{DoxyCompactList}\small\item\em this function sets the Display Start Line register to determine starting address of display RAM, by selecting a value from 0 to 63. With value = 0, RAM row 0 is mapped to COM0. With value = 1, RAM row 1 is mapped to COM0 and so on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a1283c9775d1a433a42cf34c434762233}{SSD1306\+\_\+\+Set\+Seg\+Remap}} (SSD1306\+\_\+\+Segment\+Remap\+Direction\+\_\+t direction)
+\begin{DoxyCompactList}\small\item\em this function changes the mapping between the display data column address and the segment driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a92aa7aed08efa43b3e3453d08982f121}{SSD1306\+\_\+\+Set\+Multiplex\+Ratio}} (SSD1306\+\_\+\+MUXRatio\+\_\+t ratio)
+\begin{DoxyCompactList}\small\item\em this function switches the default 63 multiplex mode to any multiplex mode, ranging from 16 to 63. The output pads COM0$\sim$\+COM63 will be switched to the coressponding COM signal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_aa68d36ff41c7a74b9a251eded66b7790}{SSD1306\+\_\+\+Set\+COMOut\+Put\+Scan\+Direction}} (SSD1306\+\_\+\+COMOutput\+Scan\+Direction\+\_\+t direction)
+\begin{DoxyCompactList}\small\item\em this function sets the scan direction of the COM output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a0ac329e75449c573d34927fb874ed4dd}{SSD1306\+\_\+\+Set\+Disp\+Offet}} (SSD1306\+\_\+\+Row\+\_\+t offset)
+\begin{DoxyCompactList}\small\item\em this function sets vertical shift by COM from 0 to 63 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a1fc6139cf9afe44b665750b80608e4d9}{SSD1306\+\_\+\+Set\+Hardware\+Cfg}} (SSD1306\+\_\+\+Pin\+Config\+\_\+t cfg, SSD1306\+\_\+\+COMRemap\+\_\+t remap)
+\begin{DoxyCompactList}\small\item\em this function sets COM Pins Hardware Configuration \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a15aefb967dddc24a36149d99c748a545}{SSD1306\+\_\+\+Clk\+Cfg}} (SSD1306\+\_\+\+Clk\+Ratio\+\_\+t ratio, SSD1306\+\_\+\+Clk\+Frq\+\_\+t frq)
+\begin{DoxyCompactList}\small\item\em this function sets display clock divide ratio and oscillator frequency \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a5f1fc40f39d88c865eb73f1339dd3f51}{SSD1306\+\_\+\+Set\+Precharge\+Period}} (SSD1306\+\_\+\+Phase\+\_\+t phase1\+\_\+period, SSD1306\+\_\+\+Phase\+\_\+t phase2\+\_\+period)
+\begin{DoxyCompactList}\small\item\em this function sets the duration of the pre-\/charge period. This interval is counted in number of display clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a4c17ff8b3ad1d57e3048a6828590712e}{SSD1306\+\_\+\+Set\+VCOMHDeselect\+Level}} (SSD1306\+\_\+\+VCOMHDeselect\+Level\+\_\+t level)
+\begin{DoxyCompactList}\small\item\em this function adjust the VCOMH regulator output \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a1a639353688397102a82192ec7509db2}{SSD1306\+\_\+\+Set\+Charge\+Bump\+Setting}} (SSD1306\+\_\+\+Charge\+Bump\+State\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em this function turns the internal regulator circuit on/off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a801fbf3c1fd6d6bdba5a6e54b6be09fd}{SSD1306\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em this function initializes SSD1306 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a86b14cb43e0e1ad9bff0f4cb1a96f09a}{SSD1306\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em this function resets the OLED \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a4812eadc7f5ee38b4f9404adad34aea7}\label{bsp__ssd1306_8h_a4812eadc7f5ee38b4f9404adad34aea7}} 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a4812eadc7f5ee38b4f9404adad34aea7}{SSD1306\+\_\+\+Update\+Disp}} (void)
+\begin{DoxyCompactList}\small\item\em this function updates the changes to the display \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a064af4deb2abd78de940c911be614cc5}\label{bsp__ssd1306_8h_a064af4deb2abd78de940c911be614cc5}} 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a064af4deb2abd78de940c911be614cc5}{SSD1306\+\_\+\+Fill\+Buffer}} (SSD1306\+\_\+\+Pixel\+State\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em this function fills the SSD1306\+\_\+\+Buffer with 0x00 or 0x\+FF \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a1a7a325e546f3858f431759cf7573837}{SSD1306\+\_\+\+Draw\+Pixel}} (uint8\+\_\+t x, uint8\+\_\+t y, SSD1306\+\_\+\+Pixel\+State\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em this function draws a pixel at (x,y) location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a13ce754f33c27c67a22cbdd1b48b9cff}{SSD1306\+\_\+\+Draw\+Line}} (uint8\+\_\+t x1, uint8\+\_\+t y1, uint8\+\_\+t x2, uint8\+\_\+t y2)
+\begin{DoxyCompactList}\small\item\em this function draws a line between 2 dots (x1, y1) and (x2, y2) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_abbd2a715c73b8147b70b01bf39b60fd7}{SSD1306\+\_\+\+Draw\+Col}} (uint8\+\_\+t col, uint8\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em this function draws a column with a given height \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_ad7b8be50e9de1440ef72e32b20238d00}{SSD1306\+\_\+\+Sound\+Level}} (uint8\+\_\+t $\ast$p\+\_\+data, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em this function visualize sound level \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a05aae1490c9fc09a5719c2d620ffc4b5}{SSD1306\+\_\+\+Print\+Char\+XY}} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em this function draws a char at (x,y) location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a530b1b80fd0c44fecd7411345c5ec17f}{SSD1306\+\_\+\+Print\+Str\+XY}} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t $\ast$str, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em this function draws a string start at (x,y) location (up and right) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a85fa310fd9e18e1e57e094f9d2e616ac}{SSD1306\+\_\+\+Print\+Char\+Col\+Row}} (uint8\+\_\+t col, uint8\+\_\+t row, uint8\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em this function draws a character at (col,row). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_ac075386aa353217472cf2fffddf9d564}{SSD1306\+\_\+\+Print\+Str\+Col\+Row}} (uint8\+\_\+t col, uint8\+\_\+t row, uint8\+\_\+t $\ast$str, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em this function draws a string at (col,row) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_ae3f8d2787fa1cd1c646771b96f854e00}\label{bsp__ssd1306_8h_ae3f8d2787fa1cd1c646771b96f854e00}} 
+void \mbox{\hyperlink{bsp__ssd1306_8h_ae3f8d2787fa1cd1c646771b96f854e00}{SSD1306\+\_\+\+Board\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em this function draws a table (15 cols x 4 rows) on the OLED display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_a367dbaf0af732f20b9f07f7f2159c885}{SSD1306\+\_\+\+Board\+\_\+\+Print\+Char}} (uint8\+\_\+t board\+\_\+col, uint8\+\_\+t board\+\_\+row, uint8\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em this function draws a character to the initilized table (\mbox{\hyperlink{bsp__ssd1306_8h_ae3f8d2787fa1cd1c646771b96f854e00}{SSD1306\+\_\+\+Board\+\_\+\+Initialize()}}) at (board\+\_\+col, board\+\_\+row) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306_8h_af8f42b7663705818f4a90009e98778d7}{SSD1306\+\_\+\+Board\+\_\+\+Print\+Title}} (uint8\+\_\+t x\+\_\+offset, uint8\+\_\+t $\ast$title, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em this functions draw a title (string) of the table/board on the top of the OLED \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__ssd1306_8h_a2ca9ee3f74538c99605d4e44f432d58f}\label{bsp__ssd1306_8h_a2ca9ee3f74538c99605d4e44f432d58f}} 
+uint8\+\_\+t {\bfseries SSD1306\+\_\+\+Buffer} \mbox{[}SSD1306\+\_\+\+HEIGHT/8\mbox{]}\mbox{[}SSD1306\+\_\+\+WIDTH\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bsp__ssd1306_8h_ac75d02b90d91a92c888a9c4afd4edb16}\label{bsp__ssd1306_8h_ac75d02b90d91a92c888a9c4afd4edb16}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_BOARD\_X0@{SSD1306\_BOARD\_X0}}
+\index{SSD1306\_BOARD\_X0@{SSD1306\_BOARD\_X0}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_BOARD\_X0}{SSD1306\_BOARD\_X0}}
+{\footnotesize\ttfamily \#define SSD1306\+\_\+\+BOARD\+\_\+\+X0~2u}
+
+Original point to start print char to the board 
+
+Definition at line 42 of file bsp\+\_\+ssd1306.\+h.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a9e184ac2af4771b8cacbcbea2ef6e589}\label{bsp__ssd1306_8h_a9e184ac2af4771b8cacbcbea2ef6e589}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSd1306\_BOARD\_Y0@{SSd1306\_BOARD\_Y0}}
+\index{SSd1306\_BOARD\_Y0@{SSd1306\_BOARD\_Y0}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSd1306\_BOARD\_Y0}{SSd1306\_BOARD\_Y0}}
+{\footnotesize\ttfamily \#define SSd1306\+\_\+\+BOARD\+\_\+\+Y0~1u}
+
+Original point to start print char to the board 
+
+Definition at line 44 of file bsp\+\_\+ssd1306.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__ssd1306_8h_a131e398a11d6f99ab1b70a162c365a45}\label{bsp__ssd1306_8h_a131e398a11d6f99ab1b70a162c365a45}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_ActiveScroll@{SSD1306\_ActiveScroll}}
+\index{SSD1306\_ActiveScroll@{SSD1306\_ActiveScroll}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_ActiveScroll()}{SSD1306\_ActiveScroll()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Active\+Scroll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+this function activate scrollling 
+
+\begin{DoxyNote}{Note}
+should be called after calling \mbox{\hyperlink{bsp__ssd1306_8h_a1c5531d243a92767553028f657c7c8cb}{SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Scroll()}} and \mbox{\hyperlink{bsp__ssd1306_8h_a2eb472b882a565a27d54df191f22b97b}{SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Vertical\+Scroll()}} function. 
+\end{DoxyNote}
+
+
+Definition at line 57 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a367dbaf0af732f20b9f07f7f2159c885}\label{bsp__ssd1306_8h_a367dbaf0af732f20b9f07f7f2159c885}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_Board\_PrintChar@{SSD1306\_Board\_PrintChar}}
+\index{SSD1306\_Board\_PrintChar@{SSD1306\_Board\_PrintChar}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Board\_PrintChar()}{SSD1306\_Board\_PrintChar()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Board\+\_\+\+Print\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{board\+\_\+col,  }\item[{uint8\+\_\+t}]{board\+\_\+row,  }\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+this function draws a character to the initilized table (\mbox{\hyperlink{bsp__ssd1306_8h_ae3f8d2787fa1cd1c646771b96f854e00}{SSD1306\+\_\+\+Board\+\_\+\+Initialize()}}) at (board\+\_\+col, board\+\_\+row) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em board\+\_\+col} & should be in range \mbox{[}0-\/14\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em board\+\_\+row} & should be in range \mbox{[}0-\/3\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 325 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_af8f42b7663705818f4a90009e98778d7}\label{bsp__ssd1306_8h_af8f42b7663705818f4a90009e98778d7}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_Board\_PrintTitle@{SSD1306\_Board\_PrintTitle}}
+\index{SSD1306\_Board\_PrintTitle@{SSD1306\_Board\_PrintTitle}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Board\_PrintTitle()}{SSD1306\_Board\_PrintTitle()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Board\+\_\+\+Print\+Title (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x\+\_\+offset,  }\item[{uint8\+\_\+t $\ast$}]{title,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+this functions draw a title (string) of the table/board on the top of the OLED 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x\+\_\+offset} & offset on x-\/axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$title} & pointer to title \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & length/size of title \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 346 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a15aefb967dddc24a36149d99c748a545}\label{bsp__ssd1306_8h_a15aefb967dddc24a36149d99c748a545}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_ClkCfg@{SSD1306\_ClkCfg}}
+\index{SSD1306\_ClkCfg@{SSD1306\_ClkCfg}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_ClkCfg()}{SSD1306\_ClkCfg()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Clk\+Cfg (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Clk\+Ratio\+\_\+t}]{ratio,  }\item[{SSD1306\+\_\+\+Clk\+Frq\+\_\+t}]{frq }\end{DoxyParamCaption})}
+
+
+
+this function sets display clock divide ratio and oscillator frequency 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ratio} & should be in range \mbox{[}0-\/15\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em frq} & should be in range \mbox{[}0-\/15\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_ae52aaf442d4977c2526c26137c8cf922}\label{bsp__ssd1306_8h_ae52aaf442d4977c2526c26137c8cf922}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_DeactiveScroll@{SSD1306\_DeactiveScroll}}
+\index{SSD1306\_DeactiveScroll@{SSD1306\_DeactiveScroll}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DeactiveScroll()}{SSD1306\_DeactiveScroll()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Deactive\+Scroll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+this function deactivates scrolling 
+
+\begin{DoxyNote}{Note}
+should be called before calling \mbox{\hyperlink{bsp__ssd1306_8h_a1c5531d243a92767553028f657c7c8cb}{SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Scroll()}} and \mbox{\hyperlink{bsp__ssd1306_8h_a2eb472b882a565a27d54df191f22b97b}{SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Vertical\+Scroll()}} function. 
+\end{DoxyNote}
+
+
+Definition at line 55 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a294c5a0457fd92485c4b77d54b172254}\label{bsp__ssd1306_8h_a294c5a0457fd92485c4b77d54b172254}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_DispOnOff@{SSD1306\_DispOnOff}}
+\index{SSD1306\_DispOnOff@{SSD1306\_DispOnOff}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DispOnOff()}{SSD1306\_DispOnOff()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Disp\+On\+Off (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Disp\+State\+\_\+t}]{state }\end{DoxyParamCaption})}
+
+
+
+turn display ON or OFF 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em state} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+DISP\+\_\+\+OFF\+: display OFF ~\newline
+
+\item SSD1306\+\_\+\+DISP\+\_\+\+ON\+: display ON 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_abbd2a715c73b8147b70b01bf39b60fd7}\label{bsp__ssd1306_8h_abbd2a715c73b8147b70b01bf39b60fd7}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_DrawCol@{SSD1306\_DrawCol}}
+\index{SSD1306\_DrawCol@{SSD1306\_DrawCol}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawCol()}{SSD1306\_DrawCol()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Col (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col,  }\item[{uint8\+\_\+t}]{height }\end{DoxyParamCaption})}
+
+
+
+this function draws a column with a given height 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em col} & which column to draw \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & height of the column \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a13ce754f33c27c67a22cbdd1b48b9cff}\label{bsp__ssd1306_8h_a13ce754f33c27c67a22cbdd1b48b9cff}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_DrawLine@{SSD1306\_DrawLine}}
+\index{SSD1306\_DrawLine@{SSD1306\_DrawLine}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawLine()}{SSD1306\_DrawLine()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Line (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x1,  }\item[{uint8\+\_\+t}]{y1,  }\item[{uint8\+\_\+t}]{x2,  }\item[{uint8\+\_\+t}]{y2 }\end{DoxyParamCaption})}
+
+
+
+this function draws a line between 2 dots (x1, y1) and (x2, y2) 
+
+\begin{DoxyNote}{Note}
+(0,0) locate at the bottom left of the OLED and (127,63) locate at the top right of the OLED.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x1} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em y1} & should be in range \mbox{[}0-\/63\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em x2} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em y2} & should be in range \mbox{[}0-\/63\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a1a7a325e546f3858f431759cf7573837}\label{bsp__ssd1306_8h_a1a7a325e546f3858f431759cf7573837}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_DrawPixel@{SSD1306\_DrawPixel}}
+\index{SSD1306\_DrawPixel@{SSD1306\_DrawPixel}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DrawPixel()}{SSD1306\_DrawPixel()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Draw\+Pixel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{SSD1306\+\_\+\+Pixel\+State\+\_\+t}]{state }\end{DoxyParamCaption})}
+
+
+
+this function draws a pixel at (x,y) location. 
+
+\begin{DoxyNote}{Note}
+(0,0) locate at the bottom left of the OLED and (127,63) locate at the top right of the OLED.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & should be in range \mbox{[}0-\/63\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em state} & on/off \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 192 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a801fbf3c1fd6d6bdba5a6e54b6be09fd}\label{bsp__ssd1306_8h_a801fbf3c1fd6d6bdba5a6e54b6be09fd}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_Init@{SSD1306\_Init}}
+\index{SSD1306\_Init@{SSD1306\_Init}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Init()}{SSD1306\_Init()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+this function initializes SSD1306 
+
+\begin{DoxyNote}{Note}
+this function should be called first before using any SSD1306\textquotesingle{}s functions. SSD1306 is intialized by execute following commands
+\begin{DoxyEnumerate}
+\item RESET (active LOW)
+\item Set multiplex ratio (0x\+A8)
+\item Set display offset (0x\+D3)
+\item Set display start line (0x40)
+\item Set segment re-\/map (0x\+A0/0x\+A1)
+\item Set COM Output Direction (0x\+C0/0x\+C8)
+\item Set COM pins hardware configuration (0x\+DA)
+\item Set contrast control (0x81)
+\item Disable entire display on (0x\+A4)
+\item Set normal display (0x\+A6)
+\item Set osc frequency (0x\+D5)
+\item Enable charge pump regulator (0x8D)
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Display on (0x\+AF) 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+
+Definition at line 146 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_af99583f60d604da6f06b37be4a50c6dc}\label{bsp__ssd1306_8h_af99583f60d604da6f06b37be4a50c6dc}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_InverseDisp@{SSD1306\_InverseDisp}}
+\index{SSD1306\_InverseDisp@{SSD1306\_InverseDisp}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_InverseDisp()}{SSD1306\_InverseDisp()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Inverse\+Disp (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Inverse\+\_\+t}]{state }\end{DoxyParamCaption})}
+
+
+
+this function inverse display color 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em state} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+NORMAL\+\_\+\+DISP\+: 0 in RAM -\/$>$ OFF in Display ~\newline
+
+\item SSD1306\+\_\+\+INVERSE\+\_\+\+DISP\+: 0 in RAM -\/$>$ ON in Display 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a85fa310fd9e18e1e57e094f9d2e616ac}\label{bsp__ssd1306_8h_a85fa310fd9e18e1e57e094f9d2e616ac}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_PrintCharColRow@{SSD1306\_PrintCharColRow}}
+\index{SSD1306\_PrintCharColRow@{SSD1306\_PrintCharColRow}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_PrintCharColRow()}{SSD1306\_PrintCharColRow()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Print\+Char\+Col\+Row (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col,  }\item[{uint8\+\_\+t}]{row,  }\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+this function draws a character at (col,row). 
+
+\begin{DoxyNote}{Note}
+for 128x64 display with 6x8 font, there are 21 cols and 8 rows
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em col} & should be in range \mbox{[}0-\/20\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em row} & should be in range \mbox{[}0-\/7\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 290 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a05aae1490c9fc09a5719c2d620ffc4b5}\label{bsp__ssd1306_8h_a05aae1490c9fc09a5719c2d620ffc4b5}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_PrintCharXY@{SSD1306\_PrintCharXY}}
+\index{SSD1306\_PrintCharXY@{SSD1306\_PrintCharXY}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_PrintCharXY()}{SSD1306\_PrintCharXY()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Print\+Char\+XY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+this function draws a char at (x,y) location. 
+
+\begin{DoxyNote}{Note}
+this function will draw the character from (x,y) up and to the right of (x,y) 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & should be in range \mbox{[}0-\/63\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_ac075386aa353217472cf2fffddf9d564}\label{bsp__ssd1306_8h_ac075386aa353217472cf2fffddf9d564}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_PrintStrColRow@{SSD1306\_PrintStrColRow}}
+\index{SSD1306\_PrintStrColRow@{SSD1306\_PrintStrColRow}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_PrintStrColRow()}{SSD1306\_PrintStrColRow()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Print\+Str\+Col\+Row (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col,  }\item[{uint8\+\_\+t}]{row,  }\item[{uint8\+\_\+t $\ast$}]{str,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+this function draws a string at (col,row) 
+
+\begin{DoxyNote}{Note}
+for 128x64 display with 6x8 font, there are 21 cols and 8 rows
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em col} & should be in range \mbox{[}0-\/20\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em row} & should be in range \mbox{[}0-\/7\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$str} & pointer to the string \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & length/size of the string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 295 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a530b1b80fd0c44fecd7411345c5ec17f}\label{bsp__ssd1306_8h_a530b1b80fd0c44fecd7411345c5ec17f}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_PrintStrXY@{SSD1306\_PrintStrXY}}
+\index{SSD1306\_PrintStrXY@{SSD1306\_PrintStrXY}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_PrintStrXY()}{SSD1306\_PrintStrXY()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Print\+Str\+XY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{uint8\+\_\+t $\ast$}]{str,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+this function draws a string start at (x,y) location (up and right) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & should be in range \mbox{[}0-\/63\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$str} & pointer to the string \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & length/size of the string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 282 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a86b14cb43e0e1ad9bff0f4cb1a96f09a}\label{bsp__ssd1306_8h_a86b14cb43e0e1ad9bff0f4cb1a96f09a}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_Reset@{SSD1306\_Reset}}
+\index{SSD1306\_Reset@{SSD1306\_Reset}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Reset()}{SSD1306\_Reset()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+this function resets the OLED 
+
+\begin{DoxyNote}{Note}
+when RES\# input is LOW, the chip is initialized with following status ~\newline
+
+\begin{DoxyEnumerate}
+\item Display is OFF
+\item 126 x 64 Display Mode
+\item Normal segment and display data column address and row address mapping (SEG0 mapped to address 00h and COM0 mapped to address 00h
+\item Shift register data clear in serial interface
+\item Display start line is set at display RAM address 0
+\item Column address counter is set at 0
+\item Normal scan direction of the COM outputs
+\item Constrast control register is set at 7Fh
+\item Normal display mode 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+
+Definition at line 157 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a1a639353688397102a82192ec7509db2}\label{bsp__ssd1306_8h_a1a639353688397102a82192ec7509db2}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetChargeBumpSetting@{SSD1306\_SetChargeBumpSetting}}
+\index{SSD1306\_SetChargeBumpSetting@{SSD1306\_SetChargeBumpSetting}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetChargeBumpSetting()}{SSD1306\_SetChargeBumpSetting()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Charge\+Bump\+Setting (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Charge\+Bump\+State\+\_\+t}]{state }\end{DoxyParamCaption})}
+
+
+
+this function turns the internal regulator circuit on/off. 
+
+\begin{DoxyNote}{Note}
+The internal regulator circuit in SSD1306 accompanying only 2 exernal capacitors can generate a 7.\+5V voltage supply (VCC) from a low voltage supply input (VBAT). The VCC is the voltage supply to the OLED driver block.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em state} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+CHARGE\+\_\+\+BUMP\+\_\+\+DISABLE\+: disable charge pump ~\newline
+
+\item SSD1306\+\_\+\+CHARGE\+\_\+\+BUMP\+\_\+\+ENABLE\+: enable charge pump during display on 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a9b078b260fc41c0bde240227353d6259}\label{bsp__ssd1306_8h_a9b078b260fc41c0bde240227353d6259}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetColAddr@{SSD1306\_SetColAddr}}
+\index{SSD1306\_SetColAddr@{SSD1306\_SetColAddr}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetColAddr()}{SSD1306\_SetColAddr()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Col\+Addr (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Col\+\_\+t}]{col\+\_\+start,  }\item[{SSD1306\+\_\+\+Col\+\_\+t}]{col\+\_\+end }\end{DoxyParamCaption})}
+
+
+
+this function set column start address and end adress of the display data RAM. 
+
+\begin{DoxyNote}{Note}
+ONLY use for Horizontal or Vertical Addressing Mode
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em col\+\_\+start} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em col\+\_\+end} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_aa68d36ff41c7a74b9a251eded66b7790}\label{bsp__ssd1306_8h_aa68d36ff41c7a74b9a251eded66b7790}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetCOMOutPutScanDirection@{SSD1306\_SetCOMOutPutScanDirection}}
+\index{SSD1306\_SetCOMOutPutScanDirection@{SSD1306\_SetCOMOutPutScanDirection}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetCOMOutPutScanDirection()}{SSD1306\_SetCOMOutPutScanDirection()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+COMOut\+Put\+Scan\+Direction (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+COMOutput\+Scan\+Direction\+\_\+t}]{direction }\end{DoxyParamCaption})}
+
+
+
+this function sets the scan direction of the COM output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em direction} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+FROM\+\_\+\+COM0\+: Normal mode. Scan from COM0 to COM\mbox{[}N-\/1\mbox{]}~\newline
+
+\item SSD1306\+\_\+\+TO\+\_\+\+COM0\+: Remapped mode. Scan from COM\mbox{[}N-\/1\mbox{]} to COM0 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_ac7df777e70fca4e6e5036e80cb6ce21d}\label{bsp__ssd1306_8h_ac7df777e70fca4e6e5036e80cb6ce21d}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetConstrast@{SSD1306\_SetConstrast}}
+\index{SSD1306\_SetConstrast@{SSD1306\_SetConstrast}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetConstrast()}{SSD1306\_SetConstrast()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Constrast (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{constrast }\end{DoxyParamCaption})}
+
+
+
+this function changes the constrast value of the display 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em constrast} & should be in range \mbox{[}0x00 -\/ 0x\+FF\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a0ac329e75449c573d34927fb874ed4dd}\label{bsp__ssd1306_8h_a0ac329e75449c573d34927fb874ed4dd}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetDispOffet@{SSD1306\_SetDispOffet}}
+\index{SSD1306\_SetDispOffet@{SSD1306\_SetDispOffet}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetDispOffet()}{SSD1306\_SetDispOffet()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Disp\+Offet (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Row\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+
+
+this function sets vertical shift by COM from 0 to 63 
+
+@paramp\mbox{[}in\mbox{]} offset should be in range \mbox{[}0-\/63\mbox{]} 
+
+Definition at line 120 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a43d23634a1c2ae60e70a902bdcc9f361}\label{bsp__ssd1306_8h_a43d23634a1c2ae60e70a902bdcc9f361}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetDispStartLine@{SSD1306\_SetDispStartLine}}
+\index{SSD1306\_SetDispStartLine@{SSD1306\_SetDispStartLine}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetDispStartLine()}{SSD1306\_SetDispStartLine()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Disp\+Start\+Line (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Row\+\_\+t}]{start\+\_\+line }\end{DoxyParamCaption})}
+
+
+
+this function sets the Display Start Line register to determine starting address of display RAM, by selecting a value from 0 to 63. With value = 0, RAM row 0 is mapped to COM0. With value = 1, RAM row 1 is mapped to COM0 and so on. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+\_\+line} & should be in range \mbox{[}0-\/63\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a1fc6139cf9afe44b665750b80608e4d9}\label{bsp__ssd1306_8h_a1fc6139cf9afe44b665750b80608e4d9}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetHardwareCfg@{SSD1306\_SetHardwareCfg}}
+\index{SSD1306\_SetHardwareCfg@{SSD1306\_SetHardwareCfg}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetHardwareCfg()}{SSD1306\_SetHardwareCfg()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Hardware\+Cfg (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Pin\+Config\+\_\+t}]{cfg,  }\item[{SSD1306\+\_\+\+COMRemap\+\_\+t}]{remap }\end{DoxyParamCaption})}
+
+
+
+this function sets COM Pins Hardware Configuration 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cfg} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+PIN\+\_\+\+CFG\+\_\+\+SEQUENT\+: sequential COM pin configuration ~\newline
+
+\item SSD1306\+\_\+\+PIN\+\_\+\+CFG\+\_\+\+ALTER\+: alternative COM pin configuration 
+\end{DoxyItemize}\\
+\hline
+\mbox{\texttt{ in}}  & {\em remap} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+COM\+\_\+\+REMAP\+\_\+\+DISABLE\+: disable COM Left/\+Right remap ~\newline
+
+\item SSD1306\+\_\+\+COM\+\_\+\+REMAP\+\_\+\+ENABLE\+: enable COM Left/\+Right remap 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a5aa5188b650ef7bcca4956260c415c35}\label{bsp__ssd1306_8h_a5aa5188b650ef7bcca4956260c415c35}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetMemAddrMode@{SSD1306\_SetMemAddrMode}}
+\index{SSD1306\_SetMemAddrMode@{SSD1306\_SetMemAddrMode}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetMemAddrMode()}{SSD1306\_SetMemAddrMode()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Mem\+Addr\+Mode (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Mem\+Addr\+Mode\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+this function sets memory addressing mode 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mode} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+MEM\+\_\+\+ADDR\+\_\+\+HORIZONTAL\+\_\+\+MODE\+: Horizontal addressing mode ~\newline
+
+\item SSD1306\+\_\+\+MEM\+\_\+\+ADDR\+\_\+\+VERTICAL\+\_\+\+MODE\+: Vertical addressing mode ~\newline
+
+\item SSD1306\+\_\+\+MEM\+\_\+\+ADDR\+\_\+\+PAGE\+\_\+\+MODE\+: Page addressing mode 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a92aa7aed08efa43b3e3453d08982f121}\label{bsp__ssd1306_8h_a92aa7aed08efa43b3e3453d08982f121}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetMultiplexRatio@{SSD1306\_SetMultiplexRatio}}
+\index{SSD1306\_SetMultiplexRatio@{SSD1306\_SetMultiplexRatio}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetMultiplexRatio()}{SSD1306\_SetMultiplexRatio()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Multiplex\+Ratio (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+MUXRatio\+\_\+t}]{ratio }\end{DoxyParamCaption})}
+
+
+
+this function switches the default 63 multiplex mode to any multiplex mode, ranging from 16 to 63. The output pads COM0$\sim$\+COM63 will be switched to the coressponding COM signal 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ratio} & should be in range \mbox{[}16-\/63\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a894832e97f84f35bbe464bbbdea4ce99}\label{bsp__ssd1306_8h_a894832e97f84f35bbe464bbbdea4ce99}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetPageAddr@{SSD1306\_SetPageAddr}}
+\index{SSD1306\_SetPageAddr@{SSD1306\_SetPageAddr}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetPageAddr()}{SSD1306\_SetPageAddr()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Page\+Addr (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{start\+\_\+page,  }\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{end\+\_\+page }\end{DoxyParamCaption})}
+
+
+
+this function set start page address and end page address of the display data RAM. 
+
+\begin{DoxyNote}{Note}
+ONLY use for Horizontal or Vertical Addressing Mode
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+\_\+page} & should be in range \mbox{[}0-\/7\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em end\+\_\+page} & should be in range \mbox{[}0-\/7\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_aa38006b8ead560ab5dea4cd32a838f4d}\label{bsp__ssd1306_8h_aa38006b8ead560ab5dea4cd32a838f4d}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetPageStartAddr@{SSD1306\_SetPageStartAddr}}
+\index{SSD1306\_SetPageStartAddr@{SSD1306\_SetPageStartAddr}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetPageStartAddr()}{SSD1306\_SetPageStartAddr()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Page\+Start\+Addr (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{start\+\_\+page,  }\item[{SSD1306\+\_\+\+Col\+\_\+t}]{seg }\end{DoxyParamCaption})}
+
+
+
+this function set start page address and column(segment) start address 
+
+\begin{DoxyNote}{Note}
+ONLY use for Page Addressing Mode
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+\_\+page} & should be in range \mbox{[}0-\/7\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em seg} & should be in range \mbox{[}0-\/127\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a5f1fc40f39d88c865eb73f1339dd3f51}\label{bsp__ssd1306_8h_a5f1fc40f39d88c865eb73f1339dd3f51}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetPrechargePeriod@{SSD1306\_SetPrechargePeriod}}
+\index{SSD1306\_SetPrechargePeriod@{SSD1306\_SetPrechargePeriod}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetPrechargePeriod()}{SSD1306\_SetPrechargePeriod()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Precharge\+Period (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Phase\+\_\+t}]{phase1\+\_\+period,  }\item[{SSD1306\+\_\+\+Phase\+\_\+t}]{phase2\+\_\+period }\end{DoxyParamCaption})}
+
+
+
+this function sets the duration of the pre-\/charge period. This interval is counted in number of display clock. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em phase1\+\_\+period} & should be in range \mbox{[}0-\/15\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em phase2\+\_\+period} & should be in range \mbox{[}0-\/15\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a1283c9775d1a433a42cf34c434762233}\label{bsp__ssd1306_8h_a1283c9775d1a433a42cf34c434762233}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetSegRemap@{SSD1306\_SetSegRemap}}
+\index{SSD1306\_SetSegRemap@{SSD1306\_SetSegRemap}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetSegRemap()}{SSD1306\_SetSegRemap()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Seg\+Remap (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Segment\+Remap\+Direction\+\_\+t}]{direction }\end{DoxyParamCaption})}
+
+
+
+this function changes the mapping between the display data column address and the segment driver. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em direction} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+SEG\+\_\+\+REMAP\+\_\+\+NORM\+: column address 0 is mapped to SEG0~\newline
+
+\item SSD1306\+\_\+\+SEG\+\_\+\+REMAP\+\_\+\+INVERSE\+: column address 127 is mapped to SEG0 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a1c5531d243a92767553028f657c7c8cb}\label{bsp__ssd1306_8h_a1c5531d243a92767553028f657c7c8cb}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetupContHorizontalScroll@{SSD1306\_SetupContHorizontalScroll}}
+\index{SSD1306\_SetupContHorizontalScroll@{SSD1306\_SetupContHorizontalScroll}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetupContHorizontalScroll()}{SSD1306\_SetupContHorizontalScroll()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Scroll (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Horizontal\+Scroll\+Direction\+\_\+t}]{direct,  }\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{start\+\_\+page,  }\item[{SSD1306\+\_\+\+Scroll\+Frame\+\_\+t}]{frame,  }\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{end\+\_\+page }\end{DoxyParamCaption})}
+
+
+
+this function setups the horizontal scroll parameters and determines the scrolling start page, end page and scrolling spped 
+
+\begin{DoxyNote}{Note}
+before calling this function the horizontal scroll must be deactived. Otherwise, RAM content may be corrupted
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em direct} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+RIGHT\+\_\+\+SCROLL\+: Right Horizontal Scroll ~\newline
+
+\item SSD1306\+\_\+\+LEFT\+\_\+\+SCROLL\+: Left Horizontal Scroll 
+\end{DoxyItemize}\\
+\hline
+\mbox{\texttt{ in}}  & {\em start\+\_\+page} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & set time interval between each scroll step in terms of frame frequency \\
+\hline
+\mbox{\texttt{ in}}  & {\em end\+\_\+page} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a2eb472b882a565a27d54df191f22b97b}\label{bsp__ssd1306_8h_a2eb472b882a565a27d54df191f22b97b}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetupContHorizontalVerticalScroll@{SSD1306\_SetupContHorizontalVerticalScroll}}
+\index{SSD1306\_SetupContHorizontalVerticalScroll@{SSD1306\_SetupContHorizontalVerticalScroll}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetupContHorizontalVerticalScroll()}{SSD1306\_SetupContHorizontalVerticalScroll()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Setup\+Cont\+Horizontal\+Vertical\+Scroll (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Horizontal\+Scroll\+Direction\+\_\+t}]{direct,  }\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{start\+\_\+page,  }\item[{SSD1306\+\_\+\+Scroll\+Frame\+\_\+t}]{frame,  }\item[{SSD1306\+\_\+\+Page\+Addr\+\_\+t}]{end\+\_\+page,  }\item[{SSD1306\+\_\+\+Row\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+
+
+this function setups the continuous veritcal scroll parameters and determines the scrolling start page, end page, scrolling speed and vertical scrolling offset. 
+
+\begin{DoxyNote}{Note}
+before call this function the scroll must be deactivated. Otherwise, RAM content may be corrupted.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em direct} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+RIGHT\+\_\+\+SCROLL\+: Vertical and Right Horizontal Scroll ~\newline
+
+\item SSD1306\+\_\+\+LEFT\+\_\+\+SCROLL\+: Vertical and Left Horizontal Scroll 
+\end{DoxyItemize}\\
+\hline
+\mbox{\texttt{ in}}  & {\em start\+\_\+page} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em end\+\_\+page} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a4c17ff8b3ad1d57e3048a6828590712e}\label{bsp__ssd1306_8h_a4c17ff8b3ad1d57e3048a6828590712e}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetVCOMHDeselectLevel@{SSD1306\_SetVCOMHDeselectLevel}}
+\index{SSD1306\_SetVCOMHDeselectLevel@{SSD1306\_SetVCOMHDeselectLevel}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetVCOMHDeselectLevel()}{SSD1306\_SetVCOMHDeselectLevel()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+VCOMHDeselect\+Level (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+VCOMHDeselect\+Level\+\_\+t}]{level }\end{DoxyParamCaption})}
+
+
+
+this function adjust the VCOMH regulator output 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & ~\newline
+
+\begin{DoxyItemize}
+\item SSD1306\+\_\+\+VCOMH\+\_\+065\+\_\+\+VCC ~\newline
+
+\item SSD1306\+\_\+\+VCOMH\+\_\+077\+\_\+\+VCC ~\newline
+
+\item SSD1306\+\_\+\+VCOMH\+\_\+083\+\_\+\+VCC 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_a72c3b7cf820ee2299689276330e38d4d}\label{bsp__ssd1306_8h_a72c3b7cf820ee2299689276330e38d4d}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SetVerticalScrollArea@{SSD1306\_SetVerticalScrollArea}}
+\index{SSD1306\_SetVerticalScrollArea@{SSD1306\_SetVerticalScrollArea}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SetVerticalScrollArea()}{SSD1306\_SetVerticalScrollArea()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Set\+Vertical\+Scroll\+Area (\begin{DoxyParamCaption}\item[{SSD1306\+\_\+\+Row\+\_\+t}]{n\+\_\+fixed\+\_\+row,  }\item[{SSD1306\+\_\+\+Row\+\_\+t}]{n\+\_\+scroll\+\_\+row }\end{DoxyParamCaption})}
+
+
+
+set up the vertical scroll area ~\newline
+
+
+
+\begin{DoxyItemize}
+\item (n\+\_\+fixed\+\_\+row == 0 \&\& n\+\_\+scroll\+\_\+row == mux ratio) -\/$>$ whole area scrolls ~\newline
+
+\item (n\+\_\+fixed\+\_\+row == 0 \&\& n\+\_\+scroll\+\_\+row $<$ mux ratio) -\/$>$ top area scrolls ~\newline
+
+\item (n\+\_\+fixed\+\_\+row + n\+\_\+scroll\+\_\+row) $<$ mux ratio -\/$>$ central area scrolls ~\newline
+
+\item (n\+\_\+fixed\+\_\+row + n\+\_\+scroll\+\_\+row) == mux ratio -\/$>$ bottom area scrolls
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+\_\+fixed\+\_\+row} & number of rows in top fixed area \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+\_\+scroll\+\_\+row} & number of rows in scroll area\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item n\+\_\+fixed\+\_\+row + n\+\_\+scroll\+\_\+row $<$= multiplex ratio ~\newline
+
+\item n\+\_\+scroll\+\_\+row $<$ multiplex ratio 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line 59 of file bsp\+\_\+ssd1306.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306_8h_ad7b8be50e9de1440ef72e32b20238d00}\label{bsp__ssd1306_8h_ad7b8be50e9de1440ef72e32b20238d00}} 
+\index{bsp\_ssd1306.h@{bsp\_ssd1306.h}!SSD1306\_SoundLevel@{SSD1306\_SoundLevel}}
+\index{SSD1306\_SoundLevel@{SSD1306\_SoundLevel}!bsp\_ssd1306.h@{bsp\_ssd1306.h}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SoundLevel()}{SSD1306\_SoundLevel()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Sound\+Level (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+\_\+data,  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+this function visualize sound level 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+data} & pointer to data \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & width of the display \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 241 of file bsp\+\_\+ssd1306.\+c.
+

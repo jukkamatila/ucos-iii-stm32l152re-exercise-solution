@@ -74,33 +74,37 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;main.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="bsp__max4466_8h.html#a602abb8ec84dcb3b6f854a738310ea46">   18</a></span>&#160;<span class="preprocessor">#define ADC_BUFFER_SIZE 4096</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> ADC_HandleTypeDef hadc;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">double</span> <a class="code" href="bsp__max4466_8h.html#a0ca1129880b1b2a9d7adc3bf9c95676a">MAX4466_Read</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#a2e3ed0aa83700cdbdec56983af1bc53f">MAX4466_Init</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#a53e41d17d40e0d6482ad0d73cb473a79">MAX4466_Print</a>(UART_HandleTypeDef *uart);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#aca7f21e220653e353491bceced7c5df3">MX_ADC_Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#a323249dac769f9855c10b4ec9446b707">MX_DMA_Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __BSP_MAX4466_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="absp__max4466_8h_html_a0ca1129880b1b2a9d7adc3bf9c95676a"><div class="ttname"><a href="bsp__max4466_8h.html#a0ca1129880b1b2a9d7adc3bf9c95676a">MAX4466_Read</a></div><div class="ttdeci">double MAX4466_Read()</div><div class="ttdoc">This function reads analog signal and convert to voltage.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00014">bsp_max4466.c:14</a></div></div>
-<div class="ttc" id="absp__max4466_8h_html_a2e3ed0aa83700cdbdec56983af1bc53f"><div class="ttname"><a href="bsp__max4466_8h.html#a2e3ed0aa83700cdbdec56983af1bc53f">MAX4466_Init</a></div><div class="ttdeci">void MAX4466_Init()</div><div class="ttdoc">This function initializes ADC and DMA to convert MAX4466 ouput to voltage.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00008">bsp_max4466.c:8</a></div></div>
-<div class="ttc" id="absp__max4466_8h_html_a323249dac769f9855c10b4ec9446b707"><div class="ttname"><a href="bsp__max4466_8h.html#a323249dac769f9855c10b4ec9446b707">MX_DMA_Init</a></div><div class="ttdeci">void MX_DMA_Init(void)</div><div class="ttdoc">This function initialize DMA to use with ADC.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00114">bsp_max4466.c:114</a></div></div>
-<div class="ttc" id="absp__max4466_8h_html_a53e41d17d40e0d6482ad0d73cb473a79"><div class="ttname"><a href="bsp__max4466_8h.html#a53e41d17d40e0d6482ad0d73cb473a79">MAX4466_Print</a></div><div class="ttdeci">void MAX4466_Print(UART_HandleTypeDef *uart)</div><div class="ttdoc">This function print calculated voltage to USART.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00021">bsp_max4466.c:21</a></div></div>
-<div class="ttc" id="absp__max4466_8h_html_aca7f21e220653e353491bceced7c5df3"><div class="ttname"><a href="bsp__max4466_8h.html#aca7f21e220653e353491bceced7c5df3">MX_ADC_Init</a></div><div class="ttdeci">void MX_ADC_Init(void)</div><div class="ttdoc">This function initialize ADC.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00028">bsp_max4466.c:28</a></div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;stm32l1xx_hal.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bsp__clk_8h.html">bsp_clk.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="bsp__max4466_8h.html#a602abb8ec84dcb3b6f854a738310ea46">   21</a></span>&#160;<span class="preprocessor">#define ADC_BUFFER_SIZE 800</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> ADC_HandleTypeDef hadc;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;uint8_t <a class="code" href="bsp__max4466_8h.html#ace37ccca6559856abfc273a700d42153">MAX4466_Read</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#a2e3ed0aa83700cdbdec56983af1bc53f">MAX4466_Init</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#a53e41d17d40e0d6482ad0d73cb473a79">MAX4466_Print</a>(UART_HandleTypeDef *uart);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#aca7f21e220653e353491bceced7c5df3">MX_ADC_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__max4466_8h.html#a323249dac769f9855c10b4ec9446b707">MX_DMA_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __BSP_MAX4466_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="absp__clk_8h_html"><div class="ttname"><a href="bsp__clk_8h.html">bsp_clk.h</a></div></div>
+<div class="ttc" id="absp__max4466_8h_html_a2e3ed0aa83700cdbdec56983af1bc53f"><div class="ttname"><a href="bsp__max4466_8h.html#a2e3ed0aa83700cdbdec56983af1bc53f">MAX4466_Init</a></div><div class="ttdeci">void MAX4466_Init()</div><div class="ttdoc">This function initializes ADC and DMA to convert MAX4466 ouput to voltage.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00013">bsp_max4466.c:13</a></div></div>
+<div class="ttc" id="absp__max4466_8h_html_a323249dac769f9855c10b4ec9446b707"><div class="ttname"><a href="bsp__max4466_8h.html#a323249dac769f9855c10b4ec9446b707">MX_DMA_Init</a></div><div class="ttdeci">void MX_DMA_Init(void)</div><div class="ttdoc">This function initialize DMA to use with ADC.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00116">bsp_max4466.c:116</a></div></div>
+<div class="ttc" id="absp__max4466_8h_html_a53e41d17d40e0d6482ad0d73cb473a79"><div class="ttname"><a href="bsp__max4466_8h.html#a53e41d17d40e0d6482ad0d73cb473a79">MAX4466_Print</a></div><div class="ttdeci">void MAX4466_Print(UART_HandleTypeDef *uart)</div><div class="ttdoc">This function print calculated voltage to USART.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00025">bsp_max4466.c:25</a></div></div>
+<div class="ttc" id="absp__max4466_8h_html_aca7f21e220653e353491bceced7c5df3"><div class="ttname"><a href="bsp__max4466_8h.html#aca7f21e220653e353491bceced7c5df3">MX_ADC_Init</a></div><div class="ttdeci">void MX_ADC_Init(void)</div><div class="ttdoc">This function initialize ADC.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00032">bsp_max4466.c:32</a></div></div>
+<div class="ttc" id="absp__max4466_8h_html_ace37ccca6559856abfc273a700d42153"><div class="ttname"><a href="bsp__max4466_8h.html#ace37ccca6559856abfc273a700d42153">MAX4466_Read</a></div><div class="ttdeci">uint8_t MAX4466_Read()</div><div class="ttdoc">This function reads analog signal and convert to voltage.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__max4466_8c_source.html#l00019">bsp_max4466.c:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

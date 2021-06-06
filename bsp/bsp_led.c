@@ -1,3 +1,7 @@
+/**
+ * @file bsp_led.c
+ */
+
 #include <bsp_led.h>
 
 void LED_Init()

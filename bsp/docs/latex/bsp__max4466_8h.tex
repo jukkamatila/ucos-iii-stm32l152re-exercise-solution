@@ -1,16 +1,19 @@
 \hypertarget{bsp__max4466_8h}{}\doxysection{bsp\+\_\+max4466.\+h File Reference}
 \label{bsp__max4466_8h}\index{bsp\_max4466.h@{bsp\_max4466.h}}
-{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32l1xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bsp\+\_\+clk.\+h\char`\"{}}\newline
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}\label{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}} 
-\#define \mbox{\hyperlink{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}{ADC\+\_\+\+BUFFER\+\_\+\+SIZE}}~4096
+\#define \mbox{\hyperlink{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}{ADC\+\_\+\+BUFFER\+\_\+\+SIZE}}~800
 \begin{DoxyCompactList}\small\item\em size of the buffer used by ADC \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{bsp__max4466_8h_a0ca1129880b1b2a9d7adc3bf9c95676a}{MAX4466\+\_\+\+Read}} ()
+uint8\+\_\+t \mbox{\hyperlink{bsp__max4466_8h_ace37ccca6559856abfc273a700d42153}{MAX4466\+\_\+\+Read}} ()
 \begin{DoxyCompactList}\small\item\em This function reads analog signal and convert to voltage. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{bsp__max4466_8h_a2e3ed0aa83700cdbdec56983af1bc53f}\label{bsp__max4466_8h_a2e3ed0aa83700cdbdec56983af1bc53f}} 
 void \mbox{\hyperlink{bsp__max4466_8h_a2e3ed0aa83700cdbdec56983af1bc53f}{MAX4466\+\_\+\+Init}} ()
@@ -49,22 +52,22 @@ This function print calculated voltage to USART.
 \end{DoxyParams}
 
 
-Definition at line 21 of file bsp\+\_\+max4466.\+c.
+Definition at line 25 of file bsp\+\_\+max4466.\+c.
 
-\mbox{\Hypertarget{bsp__max4466_8h_a0ca1129880b1b2a9d7adc3bf9c95676a}\label{bsp__max4466_8h_a0ca1129880b1b2a9d7adc3bf9c95676a}} 
+\mbox{\Hypertarget{bsp__max4466_8h_ace37ccca6559856abfc273a700d42153}\label{bsp__max4466_8h_ace37ccca6559856abfc273a700d42153}} 
 \index{bsp\_max4466.h@{bsp\_max4466.h}!MAX4466\_Read@{MAX4466\_Read}}
 \index{MAX4466\_Read@{MAX4466\_Read}!bsp\_max4466.h@{bsp\_max4466.h}}
 \doxysubsubsection{\texorpdfstring{MAX4466\_Read()}{MAX4466\_Read()}}
-{\footnotesize\ttfamily double MAX4466\+\_\+\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint8\+\_\+t MAX4466\+\_\+\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 This function reads analog signal and convert to voltage. 
 
 \begin{DoxyReturn}{Returns}
-voltage 
+adc\+\_\+value \href{0V-3.3V}{\texttt{ 0-\/255}} 
 \end{DoxyReturn}
 
 
-Definition at line 14 of file bsp\+\_\+max4466.\+c.
+Definition at line 19 of file bsp\+\_\+max4466.\+c.
 

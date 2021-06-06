@@ -1,0 +1,190 @@
+\hypertarget{bsp__ssd1306__cfg_8c}{}\doxysection{bsp\+\_\+ssd1306\+\_\+cfg.\+c File Reference}
+\label{bsp__ssd1306__cfg_8c}\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+
+
+contains functions that should be modified when porting to differrent target devices  
+
+
+{\ttfamily \#include \char`\"{}bsp\+\_\+ssd1306\+\_\+cfg.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__ssd1306__cfg_8c_afc7578007bb0fac354d20610445cd07a}{SSD1306\+\_\+\+Write\+Command}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em To write command to SSD1306. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a2bf3601a0c244d08ba73215f22fc6e55}{SSD1306\+\_\+\+Write\+Data}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em To write data to SSD1306. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a2535d0ba74566fc7f69276d945d0a18d}{SSD1306\+\_\+\+Delay}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em creates delay \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_aa9c08c63f5fceb721cf09ce8a8b8a026}\label{bsp__ssd1306__cfg_8c_aa9c08c63f5fceb721cf09ce8a8b8a026}} 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_aa9c08c63f5fceb721cf09ce8a8b8a026}{SSD1306\+\_\+\+CSPin\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em set CS pin LOW \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a9e51b4a07bcb6ac9cf5d00828f047219}\label{bsp__ssd1306__cfg_8c_a9e51b4a07bcb6ac9cf5d00828f047219}} 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a9e51b4a07bcb6ac9cf5d00828f047219}{SSD1306\+\_\+\+CSPin\+On}} (void)
+\begin{DoxyCompactList}\small\item\em set CS pin HIGH \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a62d1e201be7cb73b4c95231707243c88}\label{bsp__ssd1306__cfg_8c_a62d1e201be7cb73b4c95231707243c88}} 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a62d1e201be7cb73b4c95231707243c88}{SSD1306\+\_\+\+DCPin\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em set DC LOW \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_aa33de1ecdb51f510d51b8514947745b6}\label{bsp__ssd1306__cfg_8c_aa33de1ecdb51f510d51b8514947745b6}} 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_aa33de1ecdb51f510d51b8514947745b6}{SSD1306\+\_\+\+DCPin\+On}} (void)
+\begin{DoxyCompactList}\small\item\em set DC HIGH \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a5b63cf0d21dc8fa7a596c3500a9c5e85}\label{bsp__ssd1306__cfg_8c_a5b63cf0d21dc8fa7a596c3500a9c5e85}} 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a5b63cf0d21dc8fa7a596c3500a9c5e85}{SSD1306\+\_\+\+Reset\+Pin\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em set RESET LOW \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_ab97d6e9bc20ad3f50cbe44df6c669e08}\label{bsp__ssd1306__cfg_8c_ab97d6e9bc20ad3f50cbe44df6c669e08}} 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_ab97d6e9bc20ad3f50cbe44df6c669e08}{SSD1306\+\_\+\+Reset\+Pin\+On}} (void)
+\begin{DoxyCompactList}\small\item\em set RESET HIGH \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_aea85daa666c03d85fd59edef711ebb08}\label{bsp__ssd1306__cfg_8c_aea85daa666c03d85fd59edef711ebb08}} 
+void {\bfseries MX\+\_\+\+SPI2\+\_\+\+Init} (void)
+\item 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}{HAL\+\_\+\+SPI\+\_\+\+Msp\+Init}} (SPI\+\_\+\+Handle\+Type\+Def $\ast$spi\+Handle)
+\item 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_af9af6cae4cb9386b709196d3a3ab4f78}{HAL\+\_\+\+SPI\+\_\+\+Msp\+De\+Init}} (SPI\+\_\+\+Handle\+Type\+Def $\ast$spi\+Handle)
+\item 
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_af74dbd70f5bce50abc855058ed844977}\label{bsp__ssd1306__cfg_8c_af74dbd70f5bce50abc855058ed844977}} 
+void {\bfseries SSD1306\+\_\+\+Ctrl\+Pin\+Init} (void)
+\item 
+void \mbox{\hyperlink{bsp__ssd1306__cfg_8c_a801fbf3c1fd6d6bdba5a6e54b6be09fd}{SSD1306\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em this function initializes SSD1306 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+contains functions that should be modified when porting to differrent target devices 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_af9af6cae4cb9386b709196d3a3ab4f78}\label{bsp__ssd1306__cfg_8c_af9af6cae4cb9386b709196d3a3ab4f78}} 
+\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}!HAL\_SPI\_MspDeInit@{HAL\_SPI\_MspDeInit}}
+\index{HAL\_SPI\_MspDeInit@{HAL\_SPI\_MspDeInit}!bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MspDeInit()}{HAL\_SPI\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SPI\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+Handle\+Type\+Def $\ast$}]{spi\+Handle }\end{DoxyParamCaption})}
+
+SPI2 GPIO Configuration PB13 -\/-\/-\/---$>$ SPI2\+\_\+\+SCK PB14 -\/-\/-\/---$>$ SPI2\+\_\+\+MISO PB15 -\/-\/-\/---$>$ SPI2\+\_\+\+MOSI
+
+Definition at line 110 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}\label{bsp__ssd1306__cfg_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}} 
+\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}!HAL\_SPI\_MspInit@{HAL\_SPI\_MspInit}}
+\index{HAL\_SPI\_MspInit@{HAL\_SPI\_MspInit}!bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MspInit()}{HAL\_SPI\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SPI\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{SPI\+\_\+\+Handle\+Type\+Def $\ast$}]{spi\+Handle }\end{DoxyParamCaption})}
+
+SPI2 GPIO Configuration PB13 -\/-\/-\/---$>$ SPI2\+\_\+\+SCK PB14 -\/-\/-\/---$>$ SPI2\+\_\+\+MISO PB15 -\/-\/-\/---$>$ SPI2\+\_\+\+MOSI
+
+Definition at line 86 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a2535d0ba74566fc7f69276d945d0a18d}\label{bsp__ssd1306__cfg_8c_a2535d0ba74566fc7f69276d945d0a18d}} 
+\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}!SSD1306\_Delay@{SSD1306\_Delay}}
+\index{SSD1306\_Delay@{SSD1306\_Delay}!bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Delay()}{SSD1306\_Delay()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})}
+
+
+
+creates delay 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ms} & \+: time in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a801fbf3c1fd6d6bdba5a6e54b6be09fd}\label{bsp__ssd1306__cfg_8c_a801fbf3c1fd6d6bdba5a6e54b6be09fd}} 
+\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}!SSD1306\_Init@{SSD1306\_Init}}
+\index{SSD1306\_Init@{SSD1306\_Init}!bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_Init()}{SSD1306\_Init()}}
+{\footnotesize\ttfamily void SSD1306\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+this function initializes SSD1306 
+
+\begin{DoxyNote}{Note}
+this function should be called first before using any SSD1306\textquotesingle{}s functions. SSD1306 is intialized by execute following commands
+\begin{DoxyEnumerate}
+\item RESET (active LOW)
+\item Set multiplex ratio (0x\+A8)
+\item Set display offset (0x\+D3)
+\item Set display start line (0x40)
+\item Set segment re-\/map (0x\+A0/0x\+A1)
+\item Set COM Output Direction (0x\+C0/0x\+C8)
+\item Set COM pins hardware configuration (0x\+DA)
+\item Set contrast control (0x81)
+\item Disable entire display on (0x\+A4)
+\item Set normal display (0x\+A6)
+\item Set osc frequency (0x\+D5)
+\item Enable charge pump regulator (0x8D)
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Display on (0x\+AF) 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+
+Definition at line 146 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_afc7578007bb0fac354d20610445cd07a}\label{bsp__ssd1306__cfg_8c_afc7578007bb0fac354d20610445cd07a}} 
+\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}!SSD1306\_WriteCommand@{SSD1306\_WriteCommand}}
+\index{SSD1306\_WriteCommand@{SSD1306\_WriteCommand}!bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_WriteCommand()}{SSD1306\_WriteCommand()}}
+{\footnotesize\ttfamily int8\+\_\+t SSD1306\+\_\+\+Write\+Command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+To write command to SSD1306. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & specify command\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is an internal API and not intented to use directly
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SSD1306\+\_\+\+OK} & for Success, SSD1306\+\_\+\+WRITECMD\+\_\+\+FAILED for failed. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 9 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+
+\mbox{\Hypertarget{bsp__ssd1306__cfg_8c_a2bf3601a0c244d08ba73215f22fc6e55}\label{bsp__ssd1306__cfg_8c_a2bf3601a0c244d08ba73215f22fc6e55}} 
+\index{bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}!SSD1306\_WriteData@{SSD1306\_WriteData}}
+\index{SSD1306\_WriteData@{SSD1306\_WriteData}!bsp\_ssd1306\_cfg.c@{bsp\_ssd1306\_cfg.c}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_WriteData()}{SSD1306\_WriteData()}}
+{\footnotesize\ttfamily int8\+\_\+t SSD1306\+\_\+\+Write\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+To write data to SSD1306. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & pointer to data \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & length of data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is an internal API and not intented to use directly
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+execution status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SSD1306\+\_\+\+OK} & for Success, SSD1306\+\_\+\+WRITEDATA\+\_\+\+FAILED for failed. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 22 of file bsp\+\_\+ssd1306\+\_\+cfg.\+c.
+

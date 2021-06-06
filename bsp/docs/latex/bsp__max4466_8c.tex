@@ -1,0 +1,94 @@
+\hypertarget{bsp__max4466_8c}{}\doxysection{bsp\+\_\+max4466.\+c File Reference}
+\label{bsp__max4466_8c}\index{bsp\_max4466.c@{bsp\_max4466.c}}
+{\ttfamily \#include \char`\"{}bsp\+\_\+max4466.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a2e3ed0aa83700cdbdec56983af1bc53f}\label{bsp__max4466_8c_a2e3ed0aa83700cdbdec56983af1bc53f}} 
+void \mbox{\hyperlink{bsp__max4466_8c_a2e3ed0aa83700cdbdec56983af1bc53f}{MAX4466\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em This function initializes ADC and DMA to convert MAX4466 ouput to voltage. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{bsp__max4466_8c_ace37ccca6559856abfc273a700d42153}{MAX4466\+\_\+\+Read}} ()
+\begin{DoxyCompactList}\small\item\em This function reads analog signal and convert to voltage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__max4466_8c_a53e41d17d40e0d6482ad0d73cb473a79}{MAX4466\+\_\+\+Print}} (UART\+\_\+\+Handle\+Type\+Def $\ast$uart)
+\begin{DoxyCompactList}\small\item\em This function print calculated voltage to USART. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__max4466_8c_aca7f21e220653e353491bceced7c5df3}\label{bsp__max4466_8c_aca7f21e220653e353491bceced7c5df3}} 
+void \mbox{\hyperlink{bsp__max4466_8c_aca7f21e220653e353491bceced7c5df3}{MX\+\_\+\+ADC\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initialize ADC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__max4466_8c_ac3139540667c403c5dfd37a99c610b1c}\label{bsp__max4466_8c_ac3139540667c403c5dfd37a99c610b1c}} 
+void {\bfseries HAL\+\_\+\+ADC\+\_\+\+Msp\+Init} (ADC\+\_\+\+Handle\+Type\+Def $\ast$adc\+Handle)
+\item 
+void \mbox{\hyperlink{bsp__max4466_8c_a3f61f2c2af0f122f81a87af8ad7b4360}{HAL\+\_\+\+ADC\+\_\+\+Msp\+De\+Init}} (ADC\+\_\+\+Handle\+Type\+Def $\ast$adc\+Handle)
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a323249dac769f9855c10b4ec9446b707}\label{bsp__max4466_8c_a323249dac769f9855c10b4ec9446b707}} 
+void \mbox{\hyperlink{bsp__max4466_8c_a323249dac769f9855c10b4ec9446b707}{MX\+\_\+\+DMA\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initialize DMA to use with ADC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a7b6fac3d670a4860ebec8a961d5c4a73}\label{bsp__max4466_8c_a7b6fac3d670a4860ebec8a961d5c4a73}} 
+void {\bfseries DMA1\+\_\+\+Channel1\+\_\+\+IRQHandler} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a62fcafba91cf315db7e0e0c8f22c656f}\label{bsp__max4466_8c_a62fcafba91cf315db7e0e0c8f22c656f}} 
+ADC\+\_\+\+Handle\+Type\+Def {\bfseries hadc}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a556a7c43d0d5bbeccebc55d3f97e0fd5}\label{bsp__max4466_8c_a556a7c43d0d5bbeccebc55d3f97e0fd5}} 
+DMA\+\_\+\+Handle\+Type\+Def {\bfseries hdma\+\_\+adc}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a08f2c5fc5d66934719899186fcde0870}\label{bsp__max4466_8c_a08f2c5fc5d66934719899186fcde0870}} 
+uint8\+\_\+t {\bfseries adc\+\_\+buff} \mbox{[}\mbox{\hyperlink{bsp__max4466_8h_a602abb8ec84dcb3b6f854a738310ea46}{ADC\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_acdc04597d0020d937ef757b15daa8475}\label{bsp__max4466_8c_acdc04597d0020d937ef757b15daa8475}} 
+uint8\+\_\+t {\bfseries adc\+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{bsp__max4466_8c_a86e85ad61394d261462ab311ed493a80}\label{bsp__max4466_8c_a86e85ad61394d261462ab311ed493a80}} 
+uint8\+\_\+t {\bfseries loudness} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bsp__max4466_8c_a3f61f2c2af0f122f81a87af8ad7b4360}\label{bsp__max4466_8c_a3f61f2c2af0f122f81a87af8ad7b4360}} 
+\index{bsp\_max4466.c@{bsp\_max4466.c}!HAL\_ADC\_MspDeInit@{HAL\_ADC\_MspDeInit}}
+\index{HAL\_ADC\_MspDeInit@{HAL\_ADC\_MspDeInit}!bsp\_max4466.c@{bsp\_max4466.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ADC\_MspDeInit()}{HAL\_ADC\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+ADC\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def $\ast$}]{adc\+Handle }\end{DoxyParamCaption})}
+
+ADC GPIO Configuration PB15 -\/-\/-\/---$>$ ADC\+\_\+\+IN21
+
+Definition at line 98 of file bsp\+\_\+max4466.\+c.
+
+\mbox{\Hypertarget{bsp__max4466_8c_a53e41d17d40e0d6482ad0d73cb473a79}\label{bsp__max4466_8c_a53e41d17d40e0d6482ad0d73cb473a79}} 
+\index{bsp\_max4466.c@{bsp\_max4466.c}!MAX4466\_Print@{MAX4466\_Print}}
+\index{MAX4466\_Print@{MAX4466\_Print}!bsp\_max4466.c@{bsp\_max4466.c}}
+\doxysubsubsection{\texorpdfstring{MAX4466\_Print()}{MAX4466\_Print()}}
+{\footnotesize\ttfamily void MAX4466\+\_\+\+Print (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{uart }\end{DoxyParamCaption})}
+
+
+
+This function print calculated voltage to USART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart} & a pointer to UART handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file bsp\+\_\+max4466.\+c.
+
+\mbox{\Hypertarget{bsp__max4466_8c_ace37ccca6559856abfc273a700d42153}\label{bsp__max4466_8c_ace37ccca6559856abfc273a700d42153}} 
+\index{bsp\_max4466.c@{bsp\_max4466.c}!MAX4466\_Read@{MAX4466\_Read}}
+\index{MAX4466\_Read@{MAX4466\_Read}!bsp\_max4466.c@{bsp\_max4466.c}}
+\doxysubsubsection{\texorpdfstring{MAX4466\_Read()}{MAX4466\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t MAX4466\+\_\+\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function reads analog signal and convert to voltage. 
+
+\begin{DoxyReturn}{Returns}
+adc\+\_\+value \href{0V-3.3V}{\texttt{ 0-\/255}} 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file bsp\+\_\+max4466.\+c.
+

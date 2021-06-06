@@ -65,46 +65,47 @@ $(function() {
 <div class="title">bsp_led.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="bsp__led_8h.html">bsp_led.h</a>&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="bsp__led_8h.html#a49d7d6f5a4d535b64c6a1b54d96f98e3">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8h.html#a49d7d6f5a4d535b64c6a1b54d96f98e3">LED_Init</a>()</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<a href="bsp__led_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="bsp__led_8h.html">bsp_led.h</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (LED_PORT == GPIOA)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        __HAL_RCC_GPIOA_CLK_ENABLE();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span> (LED_PORT == GPIOB)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        __HAL_RCC_GPIOB_CLK_ENABLE();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (LED_PORT == GPIOC)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        __HAL_RCC_GPIOC_CLK_ENABLE();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    GPIO_InitStruct.Pin = LED_PIN;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    HAL_GPIO_Init(LED_PORT, &amp;GPIO_InitStruct);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="bsp__led_8h.html#a48ab7f85be85e12cc97fc3696556d8ba">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8h.html#a48ab7f85be85e12cc97fc3696556d8ba">LED_Off</a>()</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="bsp__led_8h.html#aae69f2fcd16db9818c423616055c9029">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8h.html#aae69f2fcd16db9818c423616055c9029">LED_On</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="bsp__led_8h.html#ae8849ce160eb7721a33de119aa54b553">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8h.html#ae8849ce160eb7721a33de119aa54b553">LED_Toggle</a>()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    HAL_GPIO_TogglePin(LED_PORT, LED_PIN);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="bsp__led_8c.html#a49d7d6f5a4d535b64c6a1b54d96f98e3">    7</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8c.html#a49d7d6f5a4d535b64c6a1b54d96f98e3">LED_Init</a>()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (LED_PORT == GPIOA)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        __HAL_RCC_GPIOA_CLK_ENABLE();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (LED_PORT == GPIOB)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        __HAL_RCC_GPIOB_CLK_ENABLE();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (LED_PORT == GPIOC)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        __HAL_RCC_GPIOC_CLK_ENABLE();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    GPIO_InitStruct.Pin = LED_PIN;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    HAL_GPIO_Init(LED_PORT, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="bsp__led_8c.html#a48ab7f85be85e12cc97fc3696556d8ba">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8c.html#a48ab7f85be85e12cc97fc3696556d8ba">LED_Off</a>()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="bsp__led_8c.html#aae69f2fcd16db9818c423616055c9029">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8c.html#aae69f2fcd16db9818c423616055c9029">LED_On</a>()</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="bsp__led_8c.html#ae8849ce160eb7721a33de119aa54b553">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="bsp__led_8c.html#ae8849ce160eb7721a33de119aa54b553">LED_Toggle</a>()</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    HAL_GPIO_TogglePin(LED_PORT, LED_PIN);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="ttc" id="absp__led_8c_html_a48ab7f85be85e12cc97fc3696556d8ba"><div class="ttname"><a href="bsp__led_8c.html#a48ab7f85be85e12cc97fc3696556d8ba">LED_Off</a></div><div class="ttdeci">void LED_Off()</div><div class="ttdoc">This function is used to turn LED off.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00026">bsp_led.c:26</a></div></div>
+<div class="ttc" id="absp__led_8c_html_a49d7d6f5a4d535b64c6a1b54d96f98e3"><div class="ttname"><a href="bsp__led_8c.html#a49d7d6f5a4d535b64c6a1b54d96f98e3">LED_Init</a></div><div class="ttdeci">void LED_Init()</div><div class="ttdoc">This function is used to initialize GPIO pins that used for LEDs.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00007">bsp_led.c:7</a></div></div>
+<div class="ttc" id="absp__led_8c_html_aae69f2fcd16db9818c423616055c9029"><div class="ttname"><a href="bsp__led_8c.html#aae69f2fcd16db9818c423616055c9029">LED_On</a></div><div class="ttdeci">void LED_On()</div><div class="ttdoc">This function is used to turn LED on.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00031">bsp_led.c:31</a></div></div>
+<div class="ttc" id="absp__led_8c_html_ae8849ce160eb7721a33de119aa54b553"><div class="ttname"><a href="bsp__led_8c.html#ae8849ce160eb7721a33de119aa54b553">LED_Toggle</a></div><div class="ttdeci">void LED_Toggle()</div><div class="ttdoc">This function is used to toggle LED.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00036">bsp_led.c:36</a></div></div>
 <div class="ttc" id="absp__led_8h_html"><div class="ttname"><a href="bsp__led_8h.html">bsp_led.h</a></div></div>
-<div class="ttc" id="absp__led_8h_html_a48ab7f85be85e12cc97fc3696556d8ba"><div class="ttname"><a href="bsp__led_8h.html#a48ab7f85be85e12cc97fc3696556d8ba">LED_Off</a></div><div class="ttdeci">void LED_Off()</div><div class="ttdoc">This function is used to turn LED off.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00022">bsp_led.c:22</a></div></div>
-<div class="ttc" id="absp__led_8h_html_a49d7d6f5a4d535b64c6a1b54d96f98e3"><div class="ttname"><a href="bsp__led_8h.html#a49d7d6f5a4d535b64c6a1b54d96f98e3">LED_Init</a></div><div class="ttdeci">void LED_Init()</div><div class="ttdoc">This function is used to initialize GPIO pins that used for LEDs.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00003">bsp_led.c:3</a></div></div>
-<div class="ttc" id="absp__led_8h_html_aae69f2fcd16db9818c423616055c9029"><div class="ttname"><a href="bsp__led_8h.html#aae69f2fcd16db9818c423616055c9029">LED_On</a></div><div class="ttdeci">void LED_On()</div><div class="ttdoc">This function is used to turn LED on.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00027">bsp_led.c:27</a></div></div>
-<div class="ttc" id="absp__led_8h_html_ae8849ce160eb7721a33de119aa54b553"><div class="ttname"><a href="bsp__led_8h.html#ae8849ce160eb7721a33de119aa54b553">LED_Toggle</a></div><div class="ttdeci">void LED_Toggle()</div><div class="ttdoc">This function is used to toggle LED.</div><div class="ttdef"><b>Definition:</b> <a href="bsp__led_8c_source.html#l00032">bsp_led.c:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

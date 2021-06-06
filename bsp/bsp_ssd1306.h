@@ -804,7 +804,7 @@ void SSD1306_DrawCol(uint8_t col, uint8_t height);
  * @brief this function visualize sound level
  * 
  * @param[in] p_data pointer to data 
- * @param[in] size equals width of the display
+ * @param[in] size width of the display
  */
 void SSD1306_SoundLevel(uint8_t* p_data, uint8_t size);
 

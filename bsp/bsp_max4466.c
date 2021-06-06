@@ -1,3 +1,7 @@
+/**
+ * @file bsp_max4466.c
+ */
+
 #include "bsp_max4466.h"
 
 ADC_HandleTypeDef hadc;
