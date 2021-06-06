@@ -132,7 +132,7 @@ static void Task1(void *p_arg)
     while (DEF_TRUE)
     {
         uint8_t msg[] = "\rTask 1\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+        UART_Transmit(msg, sizeof(msg));
 
         for(int i = SSD1306_WIDTH - 1; i > 0; i--) 
         {
@@ -167,7 +167,7 @@ static void Task2(void *p_arg)
                     (OS_ERR*)&os_err);
 
         uint8_t task2[] = "\rTask 2\n\r";
-        HAL_UART_Transmit(&huart2, task2, sizeof(task2), 100);
+        UART_Transmit(task2, sizeof(task2));
         SSD1306_SoundLevel(recv, msg_size);
         OSTimeDlyHMSM(0, 0, 0, 5, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
