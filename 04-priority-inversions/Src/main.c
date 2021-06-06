@@ -160,21 +160,21 @@ static void ReadTask(void *p_arg)
     while (DEF_TRUE)
     {
         uint8_t msg[] = "\rRead Task - run\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+        UART_Transmit(msg, sizeof(msg));
 
         for(int i = 0; i < 3; i++)
         {
-            HAL_UART_Transmit(&huart2,(uint8_t *)"\rRead Task - running... \n\r", 27 , 100);
+            UART_Transmit((uint8_t *)"\rRead Task - running... \n\r", 27);
             Delay_Blocking(1000);
         }
         BMP280_Read();
 
-        HAL_UART_Transmit(&huart2, (uint8_t *)"\rRead Task - OSSemPost\n\r", 25, 100);
+        UART_Transmit((uint8_t *)"\rRead Task - OSSemPost\n\r", 25);
         OSSemPost(
             (OS_SEM *)&task_sync_sem,
             (OS_OPT)OS_OPT_POST_1,
             (OS_ERR *)&os_err);
-        HAL_UART_Transmit(&huart2, (uint8_t *)"\rRead Task - end\n\r", 19, 100);
+        UART_Transmit((uint8_t *)"\rRead Task - end\n\r", 19);
 
         OSTimeDlyHMSM(0, 0, 6, 0, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
@@ -187,8 +187,8 @@ static void PrintTask(void *p_arg)
     while (DEF_TRUE)
     {
         uint8_t msg[] = "\rPrint Task - run\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
-        HAL_UART_Transmit(&huart2, (uint8_t *)"\rPrint Task - OSSemPend\n\r", 26, 100);
+        UART_Transmit(msg, sizeof(msg));
+        UART_Transmit((uint8_t *)"\rPrint Task - OSSemPend\n\r", 26);
         OSSemPend(
             (OS_SEM *)&task_sync_sem,
             (OS_TICK)0,
@@ -196,10 +196,10 @@ static void PrintTask(void *p_arg)
             (CPU_TS *)NULL,
             (OS_ERR *)&os_err);
 
-        HAL_UART_Transmit(&huart2, (uint8_t *)"\rPrint Task - resume\n\r", 23, 100);
+        UART_Transmit((uint8_t *)"\rPrint Task - resume\n\r", 23);
         BMP280_Print(&huart2);
 
-        HAL_UART_Transmit(&huart2, (uint8_t *)"\rPrint Task - end\n\r", 20, 100);
+        UART_Transmit((uint8_t *)"\rPrint Task - end\n\r", 20);
 
         OSTimeDlyHMSM(0, 0, 6, 0, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
@@ -213,16 +213,16 @@ static void BlinkTask(void *p_arg)
     {
 
         uint8_t msg[] = "\rBlink Task - run\n\r";
-        HAL_UART_Transmit(&huart2, msg, sizeof(msg), 100);
+        UART_Transmit(msg, sizeof(msg));
 
         for(int i = 0; i < 3; i++)
         {
             uint8_t countmsg[12];
             sprintf((char*)countmsg, "\rBlink %d\n\r", i+1);
-            HAL_UART_Transmit(&huart2,countmsg, sizeof(countmsg) , 100);
+            UART_Transmit(countmsg, sizeof(countmsg));
             Blink();
         }
-        HAL_UART_Transmit(&huart2, (uint8_t *)"\rBlink Task - end\n\r", 20, 100);
+        UART_Transmit((uint8_t *)"\rBlink Task - end\n\r", 20);
 
         OSTimeDlyHMSM(0, 0, 0, 3, OS_OPT_TIME_HMSM_STRICT, &os_err);
     }
