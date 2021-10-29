@@ -78,7 +78,7 @@ static void AppTaskStart(void *p_arg)
 
     HAL_Init();
     SystemClock_Config();
-    MX_USART2_UART_Init();
+    UART_Init();
     MAX4466_Init();
     SSD1306_Init();
     SSD1306_Board_PrintTitle(0, (uint8_t*)"Sound Level",12);
